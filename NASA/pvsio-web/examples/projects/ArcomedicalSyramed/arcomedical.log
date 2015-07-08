@@ -1,0 +1,8 @@
+
+Context changed to ~/pvsio-web/examples/projects/ArcomedicalSyramed/
+Prelude library PVSio not found
+Typechecking
+Parsing arcomedical
+arcomedical parsed in 0.38 seconds
+Typechecking arcomedical
+arcomedical typechecked in 2.27s: 33 TCCs, 0 proved, 14 subsumed, 19 unproved; 20 conversions; 4 msgs

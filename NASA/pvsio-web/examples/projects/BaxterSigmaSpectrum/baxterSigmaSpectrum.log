@@ -1,0 +1,16 @@
+
+Context changed to ~/pvsio-web/examples/projects/BaxterSigmaSpectrum/
+Prelude library PVSio not found
+Typechecking
+Parsing baxterSigmaSpectrum
+baxterSigmaSpectrum parsed in 0.91 seconds
+Typechecking baxterSigmaSpectrum
+Parsing constants
+constants parsed in 0.12 seconds
+Typechecking constants
+Parsing limits
+limits parsed in 0.20 seconds
+Typechecking limits
+limits typechecked in 1.90s: 17 TCCs, 0 proved, 0 subsumed, 17 unproved; 5 msgs
+constants typechecked in 3.04s: 6 TCCs, 0 proved, 1 subsumed, 5 unproved
+baxterSigmaSpectrum typechecked in 9.06s: 89 TCCs, 0 proved, 17 subsumed, 72 unproved; 4 conversions; 16 msgs

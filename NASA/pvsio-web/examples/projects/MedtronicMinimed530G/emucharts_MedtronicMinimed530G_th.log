@@ -1,0 +1,46 @@
+
+Context changed to ~/pvsio-web/examples/projects/MedtronicMinimed530G/
+Prelude library PVSio not found
+Typechecking
+Parsing emucharts_MedtronicMinimed530G_th
+emucharts_MedtronicMinimed530G_th parsed in 0.08 seconds
+Typechecking emucharts_MedtronicMinimed530G_th
+emucharts_MedtronicMinimed530G_th typechecked in 0.15s: 6 TCCs, 0 proved, 0 subsumed, 6 unproved; 14 msgs
+; While compiling #'_enter_into at top level:
+Warning: Variable E46 is never used.
+; While compiling #'(:internal (:internal enter_into 0) 0) at top level:
+Warning: Variable E57 is never used.
+; While compiling #'_leave_state at top level:
+Warning: Variable E64 is never used.
+; While compiling #'(:internal (:internal leave_state 0) 0) at top level:
+Warning: Variable E75 is never used.
+; While compiling #'_click_UP at top level:
+Warning: Variable E81 is never used.
+; While compiling #'_click_UP at top level:
+Warning: Variable E78 is never used.
+; While compiling #'_click_UP at top level:
+Warning: Variable E60 is never used.
+; While compiling #'(:internal click_UP 0) at top level:
+Warning: Variable E114 is never used.
+; While compiling #'(:internal click_UP 0) at top level:
+Warning: Variable E111 is never used.
+; While compiling #'(:internal click_UP 0) at top level:
+Warning: Variable E108 is never used.
+; While compiling #'_init at top level:
+Warning: Variable x is never used.
+; While compiling #'init! at top level:
+Warning: Variable x is never used.
+; While compiling #'(:internal init 0) at top level:
+Warning: Variable x is never used.
+; While compiling #'_click_DOWN at top level:
+Warning: Variable E125 is never used.
+; While compiling #'_click_DOWN at top level:
+Warning: Variable E122 is never used.
+; While compiling #'_click_DOWN at top level:
+Warning: Variable E119 is never used.
+; While compiling #'(:internal click_DOWN 0) at top level:
+Warning: Variable E158 is never used.
+; While compiling #'(:internal click_DOWN 0) at top level:
+Warning: Variable E155 is never used.
+; While compiling #'(:internal click_DOWN 0) at top level:
+Warning: Variable E152 is never used.

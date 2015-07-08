@@ -1,0 +1,122 @@
+
+Context changed to ~/pvsio-web/examples/projects/gpcaUI/NFM2013/
+Prelude library PVSio not found
+Typechecking
+Parsing gpcaUI
+gpcaUI parsed in 1.09 seconds
+Typechecking gpcaUI
+gpcaUI typechecked in 1.83s: 36 TCCs, 0 proved, 6 subsumed, 30 unproved; 43 conversions; 18 msgs
+; While compiling #'_up at top level:
+Warning: Variable E50 is never used.
+; While compiling #'_up at top level:
+Warning: Variable E47 is never used.
+; While compiling #'_up at top level:
+Warning: Variable mem is never used.
+; While compiling #'up! at top level:
+Warning: Variable mem is never used.
+; While compiling #'(:internal up 0) at top level:
+Warning: Variable E77 is never used.
+; While compiling #'(:internal up 0) at top level:
+Warning: Variable E74 is never used.
+; While compiling #'(:internal up 0) at top level:
+Warning: Variable mem is never used.
+; While compiling #'_init at top level:
+Warning: Variable E86 is never used.
+; While compiling #'_init at top level:
+Warning: Variable E83 is never used.
+; While compiling #'(:internal init 0) at top level:
+Warning: Variable E100 is never used.
+; While compiling #'(:internal init 0) at top level:
+Warning: Variable E97 is never used.
+; While compiling #'_lf at top level:
+Warning: Variable E129 is never used.
+; While compiling #'_lf at top level:
+Warning: Variable E126 is never used.
+; While compiling #'_lf at top level:
+Warning: Variable E123 is never used.
+; While compiling #'_lf at top level:
+Warning: Variable E120 is never used.
+; While compiling #'_lf at top level:
+Warning: Variable E117 is never used.
+; While compiling #'_lf at top level:
+Warning: Variable E114 is never used.
+; While compiling #'_lf at top level:
+Warning: Variable E111 is never used.
+; While compiling #'_lf at top level:
+Warning: Variable E108 is never used.
+; While compiling #'_lf at top level:
+Warning: Variable E105 is never used.
+; While compiling #'(:internal lf_0 0) at top level:
+Warning: Variable E228 is never used.
+; While compiling #'(:internal lf_0 0) at top level:
+Warning: Variable E225 is never used.
+; While compiling #'(:internal lf_0 0) at top level:
+Warning: Variable E222 is never used.
+; While compiling #'(:internal lf_0 0) at top level:
+Warning: Variable E219 is never used.
+; While compiling #'(:internal lf_0 0) at top level:
+Warning: Variable E216 is never used.
+; While compiling #'(:internal lf_0 0) at top level:
+Warning: Variable E213 is never used.
+; While compiling #'(:internal lf_0 0) at top level:
+Warning: Variable E210 is never used.
+; While compiling #'(:internal lf_0 0) at top level:
+Warning: Variable E207 is never used.
+; While compiling #'(:internal lf_0 0) at top level:
+Warning: Variable E204 is never used.
+; While compiling #'_dn at top level:
+Warning: Variable E236 is never used.
+; While compiling #'_dn at top level:
+Warning: Variable E233 is never used.
+; While compiling #'_dn at top level:
+Warning: Variable min_val is never used.
+; While compiling #'_dn at top level:
+Warning: Variable mem is never used.
+; While compiling #'dn! at top level:
+Warning: Variable min_val is never used.
+; While compiling #'dn! at top level:
+Warning: Variable mem is never used.
+; While compiling #'(:internal dn 0) at top level:
+Warning: Variable E259 is never used.
+; While compiling #'(:internal dn 0) at top level:
+Warning: Variable E256 is never used.
+; While compiling #'(:internal dn 0) at top level:
+Warning: Variable min_val is never used.
+; While compiling #'(:internal dn 0) at top level:
+Warning: Variable mem is never used.
+; While compiling #'_min_position at top level:
+Warning: Variable st is never used.
+; While compiling #'min_position! at top level:
+Warning: Variable st is never used.
+; While compiling #'(:internal min_position 0) at top level:
+Warning: Variable st is never used.
+; While compiling #'_rt at top level:
+Warning: Variable E279 is never used.
+; While compiling #'_rt at top level:
+Warning: Variable E276 is never used.
+; While compiling #'_rt at top level:
+Warning: Variable E273 is never used.
+; While compiling #'_rt at top level:
+Warning: Variable E270 is never used.
+; While compiling #'_rt at top level:
+Warning: Variable E267 is never used.
+; While compiling #'_rt at top level:
+Warning: Variable E264 is never used.
+; While compiling #'_rt at top level:
+Warning: Variable mem is never used.
+; While compiling #'rt! at top level:
+Warning: Variable mem is never used.
+; While compiling #'(:internal rt 0) at top level:
+Warning: Variable E346 is never used.
+; While compiling #'(:internal rt 0) at top level:
+Warning: Variable E343 is never used.
+; While compiling #'(:internal rt 0) at top level:
+Warning: Variable E340 is never used.
+; While compiling #'(:internal rt 0) at top level:
+Warning: Variable E337 is never used.
+; While compiling #'(:internal rt 0) at top level:
+Warning: Variable E334 is never used.
+; While compiling #'(:internal rt 0) at top level:
+Warning: Variable E331 is never used.
+; While compiling #'(:internal rt 0) at top level:
+Warning: Variable mem is never used.

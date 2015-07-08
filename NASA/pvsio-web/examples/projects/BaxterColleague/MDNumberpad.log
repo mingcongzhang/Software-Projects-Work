@@ -1,0 +1,10 @@
+
+Context changed to ~/pvsio-web/examples/projects/BaxterColleague/
+Prelude library PVSio not found
+Typechecking
+Parsing MDNumberpad
+MDNumberpad parsed in 0.80 seconds
+Typechecking MDNumberpad
+limits typechecked in 1.55s: 17 TCCs, 0 proved, 0 subsumed, 17 unproved; 3 msgs
+constants typechecked in 1.33s: 13 TCCs, 0 proved, 0 subsumed, 13 unproved
+MDNumberpad typechecked in 1.44s: 31 TCCs, 0 proved, 6 subsumed, 25 unproved; 8 conversions; 4 msgs

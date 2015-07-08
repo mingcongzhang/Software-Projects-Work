@@ -1,0 +1,8 @@
+
+Context changed to ~/pvsio-web/examples/projects/ZimedSyringe/
+Prelude library PVSio not found
+Typechecking
+Parsing zimed
+zimed parsed in 0.53 seconds
+Typechecking zimed
+zimed typechecked in 3.07s: 35 TCCs, 0 proved, 6 subsumed, 29 unproved; 23 conversions; 8 msgs

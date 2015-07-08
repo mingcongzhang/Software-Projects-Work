@@ -1,0 +1,8 @@
+
+Context changed to ~/pvsio-web/examples/projects/BBraunPerfusor/
+Prelude library PVSio not found
+Typechecking
+Parsing bbraun_space
+bbraun_space parsed in 0.58 seconds
+Typechecking bbraun_space
+bbraun_space typechecked in 2.73s: 49 TCCs, 0 proved, 8 subsumed, 41 unproved; 23 conversions; 22 msgs

@@ -1,0 +1,16 @@
+
+Context changed to ~/pvsio-web/examples/projects/SmithsMedical_MedFusion3500/
+Prelude library PVSio not found
+Typechecking
+Parsing medfusion3500
+medfusion3500 parsed in 0.72 seconds
+Typechecking medfusion3500
+Parsing constants
+constants parsed in 0.13 seconds
+Typechecking constants
+Parsing limits
+limits parsed in 0.15 seconds
+Typechecking limits
+limits typechecked in 1.97s: 17 TCCs, 0 proved, 0 subsumed, 17 unproved; 5 msgs
+constants typechecked in 3.27s: 6 TCCs, 0 proved, 1 subsumed, 5 unproved
+medfusion3500 typechecked in 6.50s: 32 TCCs, 0 proved, 9 subsumed, 23 unproved; 4 conversions; 10 msgs

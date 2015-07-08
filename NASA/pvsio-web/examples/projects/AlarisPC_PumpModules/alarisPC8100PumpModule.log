@@ -1,0 +1,16 @@
+
+Context changed to ~/pvsio-web/examples/projects/AlarisPC_PumpModules/
+Prelude library PVSio not found
+Typechecking
+Parsing alarisPC8100PumpModule
+alarisPC8100PumpModule parsed in 0.22 seconds
+Typechecking alarisPC8100PumpModule
+Parsing constants
+constants parsed in 0.02 seconds
+Typechecking constants
+Parsing limits
+limits parsed in 0.04 seconds
+Typechecking limits
+limits typechecked in 0.44s: 17 TCCs, 0 proved, 0 subsumed, 17 unproved; 5 msgs
+constants typechecked in 0.67s: 6 TCCs, 0 proved, 1 subsumed, 5 unproved
+alarisPC8100PumpModule typechecked in 1.79s: 85 TCCs, 0 proved, 16 subsumed, 69 unproved; 4 conversions; 16 msgs
