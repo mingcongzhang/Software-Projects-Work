@@ -1,0 +1,2067 @@
+
+Context changed to ~/pvsio-web/examples/demos/AlarisGP/pvs/
+Prelude library PVSio not found
+Typechecking
+Restored theory from /home/cav/pvsio-web/examples/demos/AlarisGP/pvs/pvsbin/types_and_constants_th.bin in 0.37s (load part took 0.12s)
+Restored theory from /home/cav/pvsio-web/examples/demos/AlarisGP/pvs/pvsbin/pump_th.bin in 1.30s (load part took 0.30s)
+Restored theory from /home/cav/pvsio-web/examples/demos/AlarisGP/pvs/pvsbin/alaris_th.bin in 1.65s (load part took 0.72s)
+Restored theory from /home/cav/pvsio-web/examples/demos/AlarisGP/pvs/pvsbin/main.bin in 0.35s (load part took 0.12s)
+; While compiling #'types_and_constants_th__dbags at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th__dbags at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th__dbags at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th__dbags at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th__dbags at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th__dbags at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th!dbags at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th!dbags at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th!dbags at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th!dbags at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th!dbags at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th!dbags at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th_dbags at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th_dbags at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th_dbags at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th_dbags at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th_dbags at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th_dbags at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th__dnewrate at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th__dnewrate at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th__dnewrate at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th__dnewrate at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th__dnewrate at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th__dnewrate at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th!dnewrate at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th!dnewrate at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th!dnewrate at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th!dnewrate at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th!dnewrate at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th!dnewrate at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th_dnewrate at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th_dnewrate at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th_dnewrate at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th_dnewrate at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th_dnewrate at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th_dnewrate at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th__dnewtime at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th__dnewtime at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th__dnewtime at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th__dnewtime at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th__dnewtime at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th__dnewtime at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th!dnewtime at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th!dnewtime at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th!dnewtime at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th!dnewtime at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th!dnewtime at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th!dnewtime at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th_dnewtime at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th_dnewtime at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th_dnewtime at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th_dnewtime at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th_dnewtime at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th_dnewtime at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th__dnewvtbi at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th__dnewvtbi at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th__dnewvtbi at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th__dnewvtbi at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th__dnewvtbi at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th__dnewvtbi at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th!dnewvtbi at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th!dnewvtbi at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th!dnewvtbi at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th!dnewvtbi at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th!dnewvtbi at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th!dnewvtbi at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th_dnewvtbi at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th_dnewvtbi at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th_dnewvtbi at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th_dnewvtbi at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th_dnewvtbi at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th_dnewvtbi at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th__drate at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th__drate at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th__drate at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th__drate at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th__drate at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th__drate at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th!drate at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th!drate at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th!drate at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th!drate at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th!drate at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th!drate at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th_drate at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th_drate at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th_drate at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th_drate at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th_drate at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th_drate at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th__dtime at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th__dtime at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th__dtime at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th__dtime at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th__dtime at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th__dtime at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th!dtime at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th!dtime at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th!dtime at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th!dtime at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th!dtime at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th!dtime at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th_dtime at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th_dtime at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th_dtime at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th_dtime at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th_dtime at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th_dtime at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th__dvol at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th__dvol at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th__dvol at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th__dvol at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th__dvol at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th__dvol at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th!dvol at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th!dvol at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th!dvol at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th!dvol at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th!dvol at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th!dvol at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th_dvol at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th_dvol at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th_dvol at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th_dvol at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th_dvol at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th_dvol at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th__dvtbi at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th__dvtbi at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th__dvtbi at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th__dvtbi at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th__dvtbi at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th__dvtbi at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th!dvtbi at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th!dvtbi at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th!dvtbi at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th!dvtbi at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th!dvtbi at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th!dvtbi at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th_dvtbi at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th_dvtbi at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th_dvtbi at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th_dvtbi at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th_dvtbi at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th_dvtbi at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'pump_th__per_tick at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'pump_th__per_tick at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'pump_th__per_tick at top level:
+Warning: Variable timeout is never used.
+; While compiling #'pump_th__per_tick at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'pump_th__per_tick at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'pump_th__per_tick at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'pump_th!per_tick at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'pump_th!per_tick at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'pump_th!per_tick at top level:
+Warning: Variable timeout is never used.
+; While compiling #'pump_th!per_tick at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'pump_th!per_tick at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'pump_th!per_tick at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'pump_th_per_tick at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'pump_th_per_tick at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'pump_th_per_tick at top level:
+Warning: Variable timeout is never used.
+; While compiling #'pump_th_per_tick at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'pump_th_per_tick at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'pump_th_per_tick at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th__maxpress at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th__maxpress at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th__maxpress at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th__maxpress at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th__maxpress at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th__maxpress at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th!maxpress at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th!maxpress at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th!maxpress at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th!maxpress at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th!maxpress at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th!maxpress at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th_maxpress at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th_maxpress at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th_maxpress at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th_maxpress at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th_maxpress at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th_maxpress at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th__dkvorate at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th__dkvorate at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th__dkvorate at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th__dkvorate at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th__dkvorate at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th__dkvorate at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th!dkvorate at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th!dkvorate at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th!dkvorate at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th!dkvorate at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th!dkvorate at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th!dkvorate at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th_dkvorate at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th_dkvorate at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th_dkvorate at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th_dkvorate at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th_dkvorate at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th_dkvorate at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'pump_th__tick_case_infuse_and_infusionrateLvtbi at
+top level:
+Warning: Variable E350 is never used.
+; While compiling #'pump_th__tick_case_infuse_and_infusionrateLvtbi at
+top level:
+Warning: Variable E347 is never used.
+; While compiling #'pump_th__tick_case_infuse_and_infusionrateLvtbi at
+top level:
+Warning: Variable E344 is never used.
+; While compiling #'pump_th__tick_case_infuse_and_infusionrateLvtbi at
+top level:
+Warning: Variable E341 is never used.
+; While compiling #'pump_th__tick_case_infuse_and_infusionrateLvtbi at
+top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'pump_th__tick_case_infuse_and_infusionrateLvtbi at
+top level:
+Warning: Variable timeout is never used.
+; While compiling #'pump_th__tick_case_infuse_and_infusionrateLvtbi at
+top level:
+Warning: Variable infusemin is never used.
+; While compiling #'pump_th__tick_case_infuse_and_infusionrateLvtbi at
+top level:
+Warning: Variable maxrate is never used.
+; While compiling #'pump_th!tick_case_infuse_and_infusionrateLvtbi at
+top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'pump_th!tick_case_infuse_and_infusionrateLvtbi at
+top level:
+Warning: Variable timeout is never used.
+; While compiling #'pump_th!tick_case_infuse_and_infusionrateLvtbi at
+top level:
+Warning: Variable infusemin is never used.
+; While compiling #'pump_th!tick_case_infuse_and_infusionrateLvtbi at
+top level:
+Warning: Variable maxrate is never used.
+; While compiling #'pump_th_tick_case_infuse_and_infusionrateLvtbi at
+top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'pump_th_tick_case_infuse_and_infusionrateLvtbi at
+top level:
+Warning: Variable timeout is never used.
+; While compiling #'pump_th_tick_case_infuse_and_infusionrateLvtbi at
+top level:
+Warning: Variable infusemin is never used.
+; While compiling #'pump_th_tick_case_infuse_and_infusionrateLvtbi at
+top level:
+Warning: Variable maxrate is never used.
+; While compiling
+#'(:internal pump_th_tick_case_infuse_and_infusionrateLvtbi 0) at top
+level:
+Warning: Variable E394 is never used.
+; While compiling
+#'(:internal pump_th_tick_case_infuse_and_infusionrateLvtbi 0) at top
+level:
+Warning: Variable E391 is never used.
+; While compiling
+#'(:internal pump_th_tick_case_infuse_and_infusionrateLvtbi 0) at top
+level:
+Warning: Variable E388 is never used.
+; While compiling
+#'(:internal pump_th_tick_case_infuse_and_infusionrateLvtbi 0) at top
+level:
+Warning: Variable E385 is never used.
+; While compiling
+#'pump_th__tick_case_infuse_and_infusionrateGEvtbi_NOTkvoflag at top
+level:
+Warning: Variable E413 is never used.
+; While compiling
+#'pump_th__tick_case_infuse_and_infusionrateGEvtbi_NOTkvoflag at top
+level:
+Warning: Variable E410 is never used.
+; While compiling
+#'pump_th__tick_case_infuse_and_infusionrateGEvtbi_NOTkvoflag at top
+level:
+Warning: Variable E407 is never used.
+; While compiling
+#'pump_th__tick_case_infuse_and_infusionrateGEvtbi_NOTkvoflag at top
+level:
+Warning: Variable E404 is never used.
+; While compiling
+#'pump_th__tick_case_infuse_and_infusionrateGEvtbi_NOTkvoflag at top
+level:
+Warning: Variable E401 is never used.
+; While compiling
+#'pump_th__tick_case_infuse_and_infusionrateGEvtbi_NOTkvoflag at top
+level:
+Warning: Variable E398 is never used.
+; While compiling
+#'pump_th__tick_case_infuse_and_infusionrateGEvtbi_NOTkvoflag at top
+level:
+Warning: Variable shorttimeout is never used.
+; While compiling
+#'pump_th__tick_case_infuse_and_infusionrateGEvtbi_NOTkvoflag at top
+level:
+Warning: Variable timeout is never used.
+; While compiling
+#'pump_th__tick_case_infuse_and_infusionrateGEvtbi_NOTkvoflag at top
+level:
+Warning: Variable maxrate is never used.
+; While compiling
+#'pump_th!tick_case_infuse_and_infusionrateGEvtbi_NOTkvoflag at top
+level:
+Warning: Variable shorttimeout is never used.
+; While compiling
+#'pump_th!tick_case_infuse_and_infusionrateGEvtbi_NOTkvoflag at top
+level:
+Warning: Variable timeout is never used.
+; While compiling
+#'pump_th!tick_case_infuse_and_infusionrateGEvtbi_NOTkvoflag at top
+level:
+Warning: Variable maxrate is never used.
+; While compiling
+#'pump_th_tick_case_infuse_and_infusionrateGEvtbi_NOTkvoflag at top
+level:
+Warning: Variable shorttimeout is never used.
+; While compiling
+#'pump_th_tick_case_infuse_and_infusionrateGEvtbi_NOTkvoflag at top
+level:
+Warning: Variable timeout is never used.
+; While compiling
+#'pump_th_tick_case_infuse_and_infusionrateGEvtbi_NOTkvoflag at top
+level:
+Warning: Variable maxrate is never used.
+; While compiling
+#'(:internal pump_th_tick_case_infuse_and_infusionrateGEvtbi_NOTkvoflag
+   0)
+at top level:
+Warning: Variable E479 is never used.
+; While compiling
+#'(:internal pump_th_tick_case_infuse_and_infusionrateGEvtbi_NOTkvoflag
+   0)
+at top level:
+Warning: Variable E476 is never used.
+; While compiling
+#'(:internal pump_th_tick_case_infuse_and_infusionrateGEvtbi_NOTkvoflag
+   0)
+at top level:
+Warning: Variable E473 is never used.
+; While compiling
+#'(:internal pump_th_tick_case_infuse_and_infusionrateGEvtbi_NOTkvoflag
+   0)
+at top level:
+Warning: Variable E470 is never used.
+; While compiling
+#'(:internal pump_th_tick_case_infuse_and_infusionrateGEvtbi_NOTkvoflag
+   0)
+at top level:
+Warning: Variable E467 is never used.
+; While compiling
+#'(:internal pump_th_tick_case_infuse_and_infusionrateGEvtbi_NOTkvoflag
+   0)
+at top level:
+Warning: Variable E464 is never used.
+; While compiling
+#'pump_th__tick_case_infuse_and_infusionrateGEvtbi_kvoflag at top level:
+Warning: Variable E486 is never used.
+; While compiling
+#'pump_th__tick_case_infuse_and_infusionrateGEvtbi_kvoflag at top level:
+Warning: Variable E483 is never used.
+; While compiling
+#'pump_th__tick_case_infuse_and_infusionrateGEvtbi_kvoflag at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling
+#'pump_th__tick_case_infuse_and_infusionrateGEvtbi_kvoflag at top level:
+Warning: Variable timeout is never used.
+; While compiling
+#'pump_th__tick_case_infuse_and_infusionrateGEvtbi_kvoflag at top level:
+Warning: Variable infusemin is never used.
+; While compiling
+#'pump_th__tick_case_infuse_and_infusionrateGEvtbi_kvoflag at top level:
+Warning: Variable maxrate is never used.
+; While compiling
+#'pump_th!tick_case_infuse_and_infusionrateGEvtbi_kvoflag at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling
+#'pump_th!tick_case_infuse_and_infusionrateGEvtbi_kvoflag at top level:
+Warning: Variable timeout is never used.
+; While compiling
+#'pump_th!tick_case_infuse_and_infusionrateGEvtbi_kvoflag at top level:
+Warning: Variable infusemin is never used.
+; While compiling
+#'pump_th!tick_case_infuse_and_infusionrateGEvtbi_kvoflag at top level:
+Warning: Variable maxrate is never used.
+; While compiling
+#'pump_th_tick_case_infuse_and_infusionrateGEvtbi_kvoflag at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling
+#'pump_th_tick_case_infuse_and_infusionrateGEvtbi_kvoflag at top level:
+Warning: Variable timeout is never used.
+; While compiling
+#'pump_th_tick_case_infuse_and_infusionrateGEvtbi_kvoflag at top level:
+Warning: Variable infusemin is never used.
+; While compiling
+#'pump_th_tick_case_infuse_and_infusionrateGEvtbi_kvoflag at top level:
+Warning: Variable maxrate is never used.
+; While compiling
+#'(:internal pump_th_tick_case_infuse_and_infusionrateGEvtbi_kvoflag 0)
+at top level:
+Warning: Variable E508 is never used.
+; While compiling
+#'(:internal pump_th_tick_case_infuse_and_infusionrateGEvtbi_kvoflag 0)
+at top level:
+Warning: Variable E505 is never used.
+; While compiling #'pump_th__tick at top level:
+Warning: Variable E517 is never used.
+; While compiling #'pump_th__tick at top level:
+Warning: Variable E514 is never used.
+; While compiling #'pump_th__tick at top level:
+Warning: Variable E511 is never used.
+; While compiling #'(:internal pump_th_tick 0) at top level:
+Warning: Variable E550 is never used.
+; While compiling #'(:internal pump_th_tick 0) at top level:
+Warning: Variable E547 is never used.
+; While compiling #'(:internal pump_th_tick 0) at top level:
+Warning: Variable E544 is never used.
+; While compiling
+#'alaris_th__tick_case_holding_volume_etc_elapseEQtimeout at top level:
+Warning: Variable E569 is never used.
+; While compiling
+#'alaris_th__tick_case_holding_volume_etc_elapseEQtimeout at top level:
+Warning: Variable E566 is never used.
+; While compiling
+#'alaris_th__tick_case_holding_volume_etc_elapseEQtimeout at top level:
+Warning: Variable E563 is never used.
+; While compiling
+#'alaris_th__tick_case_holding_volume_etc_elapseEQtimeout at top level:
+Warning: Variable E560 is never used.
+; While compiling
+#'alaris_th__tick_case_holding_volume_etc_elapseEQtimeout at top level:
+Warning: Variable E557 is never used.
+; While compiling
+#'alaris_th__tick_case_holding_volume_etc_elapseEQtimeout at top level:
+Warning: Variable E554 is never used.
+; While compiling
+#'alaris_th__tick_case_holding_volume_etc_elapseEQtimeout at top level:
+Warning: Variable E551 is never used.
+; While compiling
+#'(:internal alaris_th__tick_case_holding_volume_etc_elapseEQtimeout 0)
+at top level:
+Warning: Variable x is never used.
+; While compiling
+#'(:internal alaris_th!tick_case_holding_volume_etc_elapseEQtimeout 0)
+at top level:
+Warning: Variable x is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_holding_volume_etc_elapseEQtimeout 0)
+at top level:
+Warning: Variable E646 is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_holding_volume_etc_elapseEQtimeout 0)
+at top level:
+Warning: Variable E643 is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_holding_volume_etc_elapseEQtimeout 0)
+at top level:
+Warning: Variable E640 is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_holding_volume_etc_elapseEQtimeout 0)
+at top level:
+Warning: Variable E637 is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_holding_volume_etc_elapseEQtimeout 0)
+at top level:
+Warning: Variable E634 is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_holding_volume_etc_elapseEQtimeout 0)
+at top level:
+Warning: Variable E631 is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_holding_volume_etc_elapseEQtimeout 0)
+at top level:
+Warning: Variable E628 is never used.
+; While compiling
+#'(:internal
+   (:internal alaris_th_tick_case_holding_volume_etc_elapseEQtimeout 0)
+   0)
+at top level:
+Warning: Variable x is never used.
+; While compiling
+#'alaris_th__tick_case_holding_volume_etc_elapseEQshorttimeout at top
+level:
+Warning: Variable E668 is never used.
+; While compiling
+#'alaris_th__tick_case_holding_volume_etc_elapseEQshorttimeout at top
+level:
+Warning: Variable E665 is never used.
+; While compiling
+#'alaris_th__tick_case_holding_volume_etc_elapseEQshorttimeout at top
+level:
+Warning: Variable E662 is never used.
+; While compiling
+#'alaris_th__tick_case_holding_volume_etc_elapseEQshorttimeout at top
+level:
+Warning: Variable E659 is never used.
+; While compiling
+#'alaris_th__tick_case_holding_volume_etc_elapseEQshorttimeout at top
+level:
+Warning: Variable E656 is never used.
+; While compiling
+#'alaris_th__tick_case_holding_volume_etc_elapseEQshorttimeout at top
+level:
+Warning: Variable E653 is never used.
+; While compiling
+#'alaris_th__tick_case_holding_volume_etc_elapseEQshorttimeout at top
+level:
+Warning: Variable E650 is never used.
+; While compiling
+#'(:internal
+   alaris_th_tick_case_holding_volume_etc_elapseEQshorttimeout 0)
+at top level:
+Warning: Variable E745 is never used.
+; While compiling
+#'(:internal
+   alaris_th_tick_case_holding_volume_etc_elapseEQshorttimeout 0)
+at top level:
+Warning: Variable E742 is never used.
+; While compiling
+#'(:internal
+   alaris_th_tick_case_holding_volume_etc_elapseEQshorttimeout 0)
+at top level:
+Warning: Variable E739 is never used.
+; While compiling
+#'(:internal
+   alaris_th_tick_case_holding_volume_etc_elapseEQshorttimeout 0)
+at top level:
+Warning: Variable E736 is never used.
+; While compiling
+#'(:internal
+   alaris_th_tick_case_holding_volume_etc_elapseEQshorttimeout 0)
+at top level:
+Warning: Variable E733 is never used.
+; While compiling
+#'(:internal
+   alaris_th_tick_case_holding_volume_etc_elapseEQshorttimeout 0)
+at top level:
+Warning: Variable E730 is never used.
+; While compiling
+#'(:internal
+   alaris_th_tick_case_holding_volume_etc_elapseEQshorttimeout 0)
+at top level:
+Warning: Variable E727 is never used.
+; While compiling
+#'alaris_th__tick_case_holding_volume_etc_elapseLTtimeoutlocked at top
+level:
+Warning: Variable E764 is never used.
+; While compiling
+#'alaris_th__tick_case_holding_volume_etc_elapseLTtimeoutlocked at top
+level:
+Warning: Variable E761 is never used.
+; While compiling
+#'alaris_th__tick_case_holding_volume_etc_elapseLTtimeoutlocked at top
+level:
+Warning: Variable E758 is never used.
+; While compiling
+#'alaris_th__tick_case_holding_volume_etc_elapseLTtimeoutlocked at top
+level:
+Warning: Variable E755 is never used.
+; While compiling
+#'alaris_th__tick_case_holding_volume_etc_elapseLTtimeoutlocked at top
+level:
+Warning: Variable E752 is never used.
+; While compiling
+#'alaris_th__tick_case_holding_volume_etc_elapseLTtimeoutlocked at top
+level:
+Warning: Variable E749 is never used.
+; While compiling
+#'alaris_th!tick_case_holding_volume_etc_elapseLTtimeoutlocked at top
+level:
+Warning: Variable E782 is never used.
+; While compiling
+#'alaris_th!tick_case_holding_volume_etc_elapseLTtimeoutlocked at top
+level:
+Warning: Variable E779 is never used.
+; While compiling
+#'alaris_th!tick_case_holding_volume_etc_elapseLTtimeoutlocked at top
+level:
+Warning: Variable E776 is never used.
+; While compiling
+#'alaris_th!tick_case_holding_volume_etc_elapseLTtimeoutlocked at top
+level:
+Warning: Variable E773 is never used.
+; While compiling
+#'alaris_th!tick_case_holding_volume_etc_elapseLTtimeoutlocked at top
+level:
+Warning: Variable E770 is never used.
+; While compiling
+#'alaris_th!tick_case_holding_volume_etc_elapseLTtimeoutlocked at top
+level:
+Warning: Variable E767 is never used.
+; While compiling
+#'(:internal
+   alaris_th_tick_case_holding_volume_etc_elapseLTtimeoutlocked 0)
+at top level:
+Warning: Variable E800 is never used.
+; While compiling
+#'(:internal
+   alaris_th_tick_case_holding_volume_etc_elapseLTtimeoutlocked 0)
+at top level:
+Warning: Variable E797 is never used.
+; While compiling
+#'(:internal
+   alaris_th_tick_case_holding_volume_etc_elapseLTtimeoutlocked 0)
+at top level:
+Warning: Variable E794 is never used.
+; While compiling
+#'(:internal
+   alaris_th_tick_case_holding_volume_etc_elapseLTtimeoutlocked 0)
+at top level:
+Warning: Variable E791 is never used.
+; While compiling
+#'(:internal
+   alaris_th_tick_case_holding_volume_etc_elapseLTtimeoutlocked 0)
+at top level:
+Warning: Variable E788 is never used.
+; While compiling
+#'(:internal
+   alaris_th_tick_case_holding_volume_etc_elapseLTtimeoutlocked 0)
+at top level:
+Warning: Variable E785 is never used.
+; While compiling
+#'alaris_th__tick_case_holding_volume_etc_elapseLTtimeout at top level:
+Warning: Variable E804 is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_holding_volume_etc_elapseLTtimeout 0)
+at top level:
+Warning: Variable E815 is never used.
+; While compiling
+#'alaris_th__tick_case_infuse_infusionrateLTvtbilocked at top level:
+Warning: Variable E837 is never used.
+; While compiling
+#'alaris_th__tick_case_infuse_infusionrateLTvtbilocked at top level:
+Warning: Variable E834 is never used.
+; While compiling
+#'alaris_th__tick_case_infuse_infusionrateLTvtbilocked at top level:
+Warning: Variable E831 is never used.
+; While compiling
+#'alaris_th__tick_case_infuse_infusionrateLTvtbilocked at top level:
+Warning: Variable E828 is never used.
+; While compiling
+#'alaris_th__tick_case_infuse_infusionrateLTvtbilocked at top level:
+Warning: Variable E825 is never used.
+; While compiling
+#'alaris_th__tick_case_infuse_infusionrateLTvtbilocked at top level:
+Warning: Variable E822 is never used.
+; While compiling
+#'alaris_th__tick_case_infuse_infusionrateLTvtbilocked at top level:
+Warning: Variable E819 is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_infuse_infusionrateLTvtbilocked 0) at
+top level:
+Warning: Variable E914 is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_infuse_infusionrateLTvtbilocked 0) at
+top level:
+Warning: Variable E911 is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_infuse_infusionrateLTvtbilocked 0) at
+top level:
+Warning: Variable E908 is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_infuse_infusionrateLTvtbilocked 0) at
+top level:
+Warning: Variable E905 is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_infuse_infusionrateLTvtbilocked 0) at
+top level:
+Warning: Variable E902 is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_infuse_infusionrateLTvtbilocked 0) at
+top level:
+Warning: Variable E899 is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_infuse_infusionrateLTvtbilocked 0) at
+top level:
+Warning: Variable E896 is never used.
+; While compiling #'alaris_th__tick_case_infuse_infusionrateLTvtbi at
+top level:
+Warning: Variable E918 is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_infuse_infusionrateLTvtbi 0) at top
+level:
+Warning: Variable E929 is never used.
+; While compiling #'types_and_constants_th__small_step at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th__small_step at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th__small_step at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th__small_step at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th__small_step at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th__small_step at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th!small_step at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th!small_step at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th!small_step at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th!small_step at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th!small_step at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th!small_step at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th_small_step at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th_small_step at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th_small_step at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th_small_step at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th_small_step at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th_small_step at top level:
+Warning: Variable maxrate is never used.
+; While compiling
+#'alaris_th__tick_case_infuse_infusionrateEQvtbi_notkvoflag at top level:
+Warning: Variable E967 is never used.
+; While compiling
+#'alaris_th__tick_case_infuse_infusionrateEQvtbi_notkvoflag at top level:
+Warning: Variable E964 is never used.
+; While compiling
+#'alaris_th__tick_case_infuse_infusionrateEQvtbi_notkvoflag at top level:
+Warning: Variable E961 is never used.
+; While compiling
+#'alaris_th__tick_case_infuse_infusionrateEQvtbi_notkvoflag at top level:
+Warning: Variable E958 is never used.
+; While compiling
+#'alaris_th__tick_case_infuse_infusionrateEQvtbi_notkvoflag at top level:
+Warning: Variable E955 is never used.
+; While compiling
+#'alaris_th__tick_case_infuse_infusionrateEQvtbi_notkvoflag at top level:
+Warning: Variable E952 is never used.
+; While compiling
+#'alaris_th__tick_case_infuse_infusionrateEQvtbi_notkvoflag at top level:
+Warning: Variable E949 is never used.
+; While compiling
+#'alaris_th__tick_case_infuse_infusionrateEQvtbi_notkvoflag at top level:
+Warning: Variable E946 is never used.
+; While compiling
+#'alaris_th__tick_case_infuse_infusionrateEQvtbi_notkvoflag at top level:
+Warning: Variable E943 is never used.
+; While compiling
+#'alaris_th__tick_case_infuse_infusionrateEQvtbi_notkvoflag at top level:
+Warning: Variable E939 is never used.
+; While compiling
+#'alaris_th__tick_case_infuse_infusionrateEQvtbi_notkvoflag at top level:
+Warning: Variable E936 is never used.
+; While compiling
+#'alaris_th__tick_case_infuse_infusionrateEQvtbi_notkvoflag at top level:
+Warning: Variable E933 is never used.
+; While compiling
+#'(:internal alaris_th__tick_case_infuse_infusionrateEQvtbi_notkvoflag
+   0)
+at top level:
+Warning: Variable x is never used.
+; While compiling
+#'(:internal alaris_th!tick_case_infuse_infusionrateEQvtbi_notkvoflag
+   0)
+at top level:
+Warning: Variable x is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_infuse_infusionrateEQvtbi_notkvoflag
+   0)
+at top level:
+Warning: Variable E1099 is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_infuse_infusionrateEQvtbi_notkvoflag
+   0)
+at top level:
+Warning: Variable E1096 is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_infuse_infusionrateEQvtbi_notkvoflag
+   0)
+at top level:
+Warning: Variable E1093 is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_infuse_infusionrateEQvtbi_notkvoflag
+   0)
+at top level:
+Warning: Variable E1090 is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_infuse_infusionrateEQvtbi_notkvoflag
+   0)
+at top level:
+Warning: Variable E1087 is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_infuse_infusionrateEQvtbi_notkvoflag
+   0)
+at top level:
+Warning: Variable E1084 is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_infuse_infusionrateEQvtbi_notkvoflag
+   0)
+at top level:
+Warning: Variable E1081 is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_infuse_infusionrateEQvtbi_notkvoflag
+   0)
+at top level:
+Warning: Variable E1078 is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_infuse_infusionrateEQvtbi_notkvoflag
+   0)
+at top level:
+Warning: Variable E1075 is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_infuse_infusionrateEQvtbi_notkvoflag
+   0)
+at top level:
+Warning: Variable E1072 is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_infuse_infusionrateEQvtbi_notkvoflag
+   0)
+at top level:
+Warning: Variable E1069 is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_infuse_infusionrateEQvtbi_notkvoflag
+   0)
+at top level:
+Warning: Variable E1066 is never used.
+; While compiling
+#'(:internal
+   (:internal alaris_th_tick_case_infuse_infusionrateEQvtbi_notkvoflag
+    0)
+   0)
+at top level:
+Warning: Variable x is never used.
+; While compiling
+#'alaris_th__tick_case_infuse_infusionrateEQvtbi_kvoflag at top level:
+Warning: Variable E1103 is never used.
+; While compiling
+#'(:internal alaris_th_tick_case_infuse_infusionrateEQvtbi_kvoflag 0)
+at top level:
+Warning: Variable E1114 is never used.
+; While compiling #'types_and_constants_th__midbag at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th__midbag at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th__midbag at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th__midbag at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th__midbag at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th__midbag at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th!midbag at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th!midbag at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th!midbag at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th!midbag at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th!midbag at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th!midbag at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th_midbag at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th_midbag at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th_midbag at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th_midbag at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th_midbag at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th_midbag at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th__dlock at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th__dlock at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th__dlock at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th__dlock at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th__dlock at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th__dlock at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th!dlock at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th!dlock at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th!dlock at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th!dlock at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th!dlock at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th!dlock at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'types_and_constants_th_dlock at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'types_and_constants_th_dlock at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'types_and_constants_th_dlock at top level:
+Warning: Variable timeout is never used.
+; While compiling #'types_and_constants_th_dlock at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'types_and_constants_th_dlock at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'types_and_constants_th_dlock at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'(:internal _alaris_init 1) at top level:
+Warning: Variable x is never used.
+; While compiling #'(:internal alaris_init! 1) at top level:
+Warning: Variable x is never used.
+; While compiling #'(:internal alaris_init 1) at top level:
+Warning: Variable x is never used.
+; While compiling #'_init at top level:
+Warning: Variable x is never used.
+; While compiling #'init! at top level:
+Warning: Variable x is never used.
+; While compiling #'(:internal init 0) at top level:
+Warning: Variable x is never used.
+; While compiling #'pump_th__on at top level:
+Warning: Variable E1151 is never used.
+; While compiling #'pump_th__on at top level:
+Warning: Variable E1148 is never used.
+; While compiling #'pump_th__on at top level:
+Warning: Variable E1145 is never used.
+; While compiling #'pump_th__on at top level:
+Warning: Variable E1142 is never used.
+; While compiling #'pump_th__on at top level:
+Warning: Variable E1139 is never used.
+; While compiling #'pump_th__on at top level:
+Warning: Variable E1136 is never used.
+; While compiling #'pump_th__on at top level:
+Warning: Variable E1133 is never used.
+; While compiling #'pump_th__on at top level:
+Warning: Variable E1130 is never used.
+; While compiling #'pump_th__on at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'pump_th__on at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'pump_th__on at top level:
+Warning: Variable timeout is never used.
+; While compiling #'pump_th__on at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'pump_th__on at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'pump_th__on at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'pump_th!on at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'pump_th!on at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'pump_th!on at top level:
+Warning: Variable timeout is never used.
+; While compiling #'pump_th!on at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'pump_th!on at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'pump_th!on at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'pump_th_on at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'pump_th_on at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'pump_th_on at top level:
+Warning: Variable timeout is never used.
+; While compiling #'pump_th_on at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'pump_th_on at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'pump_th_on at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'(:internal pump_th_on 0) at top level:
+Warning: Variable E1239 is never used.
+; While compiling #'(:internal pump_th_on 0) at top level:
+Warning: Variable E1236 is never used.
+; While compiling #'(:internal pump_th_on 0) at top level:
+Warning: Variable E1233 is never used.
+; While compiling #'(:internal pump_th_on 0) at top level:
+Warning: Variable E1230 is never used.
+; While compiling #'(:internal pump_th_on 0) at top level:
+Warning: Variable E1227 is never used.
+; While compiling #'(:internal pump_th_on 0) at top level:
+Warning: Variable E1224 is never used.
+; While compiling #'(:internal pump_th_on 0) at top level:
+Warning: Variable E1221 is never used.
+; While compiling #'(:internal pump_th_on 0) at top level:
+Warning: Variable E1218 is never used.
+; While compiling #'alaris_th__on_case_infusionstatusblank at top level:
+Warning: Variable E1285 is never used.
+; While compiling #'alaris_th__on_case_infusionstatusblank at top level:
+Warning: Variable E1282 is never used.
+; While compiling #'alaris_th__on_case_infusionstatusblank at top level:
+Warning: Variable E1279 is never used.
+; While compiling #'alaris_th__on_case_infusionstatusblank at top level:
+Warning: Variable E1276 is never used.
+; While compiling #'alaris_th__on_case_infusionstatusblank at top level:
+Warning: Variable E1273 is never used.
+; While compiling #'alaris_th__on_case_infusionstatusblank at top level:
+Warning: Variable E1270 is never used.
+; While compiling #'alaris_th__on_case_infusionstatusblank at top level:
+Warning: Variable E1267 is never used.
+; While compiling #'alaris_th__on_case_infusionstatusblank at top level:
+Warning: Variable E1264 is never used.
+; While compiling #'alaris_th__on_case_infusionstatusblank at top level:
+Warning: Variable E1261 is never used.
+; While compiling #'alaris_th__on_case_infusionstatusblank at top level:
+Warning: Variable E1258 is never used.
+; While compiling #'alaris_th__on_case_infusionstatusblank at top level:
+Warning: Variable E1255 is never used.
+; While compiling #'alaris_th__on_case_infusionstatusblank at top level:
+Warning: Variable E1252 is never used.
+; While compiling #'alaris_th__on_case_infusionstatusblank at top level:
+Warning: Variable E1249 is never used.
+; While compiling #'alaris_th__on_case_infusionstatusblank at top level:
+Warning: Variable E1246 is never used.
+; While compiling #'alaris_th__on_case_infusionstatusblank at top level:
+Warning: Variable E1243 is never used.
+; While compiling #'alaris_th__on_case_infusionstatusblank at top level:
+Warning: Variable E1240 is never used.
+; While compiling #'alaris_th!on_case_infusionstatusblank at top level:
+Warning: Variable E1333 is never used.
+; While compiling #'alaris_th!on_case_infusionstatusblank at top level:
+Warning: Variable E1330 is never used.
+; While compiling #'alaris_th!on_case_infusionstatusblank at top level:
+Warning: Variable E1327 is never used.
+; While compiling #'alaris_th!on_case_infusionstatusblank at top level:
+Warning: Variable E1324 is never used.
+; While compiling #'alaris_th!on_case_infusionstatusblank at top level:
+Warning: Variable E1321 is never used.
+; While compiling #'alaris_th!on_case_infusionstatusblank at top level:
+Warning: Variable E1318 is never used.
+; While compiling #'alaris_th!on_case_infusionstatusblank at top level:
+Warning: Variable E1315 is never used.
+; While compiling #'alaris_th!on_case_infusionstatusblank at top level:
+Warning: Variable E1312 is never used.
+; While compiling #'alaris_th!on_case_infusionstatusblank at top level:
+Warning: Variable E1309 is never used.
+; While compiling #'alaris_th!on_case_infusionstatusblank at top level:
+Warning: Variable E1306 is never used.
+; While compiling #'alaris_th!on_case_infusionstatusblank at top level:
+Warning: Variable E1303 is never used.
+; While compiling #'alaris_th!on_case_infusionstatusblank at top level:
+Warning: Variable E1300 is never used.
+; While compiling #'alaris_th!on_case_infusionstatusblank at top level:
+Warning: Variable E1297 is never used.
+; While compiling #'alaris_th!on_case_infusionstatusblank at top level:
+Warning: Variable E1294 is never used.
+; While compiling #'alaris_th!on_case_infusionstatusblank at top level:
+Warning: Variable E1291 is never used.
+; While compiling #'alaris_th!on_case_infusionstatusblank at top level:
+Warning: Variable E1288 is never used.
+; While compiling #'(:internal alaris_th_on_case_infusionstatusblank 0)
+at top level:
+Warning: Variable E1381 is never used.
+; While compiling #'(:internal alaris_th_on_case_infusionstatusblank 0)
+at top level:
+Warning: Variable E1378 is never used.
+; While compiling #'(:internal alaris_th_on_case_infusionstatusblank 0)
+at top level:
+Warning: Variable E1375 is never used.
+; While compiling #'(:internal alaris_th_on_case_infusionstatusblank 0)
+at top level:
+Warning: Variable E1372 is never used.
+; While compiling #'(:internal alaris_th_on_case_infusionstatusblank 0)
+at top level:
+Warning: Variable E1369 is never used.
+; While compiling #'(:internal alaris_th_on_case_infusionstatusblank 0)
+at top level:
+Warning: Variable E1366 is never used.
+; While compiling #'(:internal alaris_th_on_case_infusionstatusblank 0)
+at top level:
+Warning: Variable E1363 is never used.
+; While compiling #'(:internal alaris_th_on_case_infusionstatusblank 0)
+at top level:
+Warning: Variable E1360 is never used.
+; While compiling #'(:internal alaris_th_on_case_infusionstatusblank 0)
+at top level:
+Warning: Variable E1357 is never used.
+; While compiling #'(:internal alaris_th_on_case_infusionstatusblank 0)
+at top level:
+Warning: Variable E1354 is never used.
+; While compiling #'(:internal alaris_th_on_case_infusionstatusblank 0)
+at top level:
+Warning: Variable E1351 is never used.
+; While compiling #'(:internal alaris_th_on_case_infusionstatusblank 0)
+at top level:
+Warning: Variable E1348 is never used.
+; While compiling #'(:internal alaris_th_on_case_infusionstatusblank 0)
+at top level:
+Warning: Variable E1345 is never used.
+; While compiling #'(:internal alaris_th_on_case_infusionstatusblank 0)
+at top level:
+Warning: Variable E1342 is never used.
+; While compiling #'(:internal alaris_th_on_case_infusionstatusblank 0)
+at top level:
+Warning: Variable E1339 is never used.
+; While compiling #'(:internal alaris_th_on_case_infusionstatusblank 0)
+at top level:
+Warning: Variable E1336 is never used.
+; While compiling #'alaris_th__on_case_infusionstatusNOTblank at top
+level:
+Warning: Variable E1415 is never used.
+; While compiling #'alaris_th__on_case_infusionstatusNOTblank at top
+level:
+Warning: Variable E1412 is never used.
+; While compiling #'alaris_th__on_case_infusionstatusNOTblank at top
+level:
+Warning: Variable E1409 is never used.
+; While compiling #'alaris_th__on_case_infusionstatusNOTblank at top
+level:
+Warning: Variable E1406 is never used.
+; While compiling #'alaris_th__on_case_infusionstatusNOTblank at top
+level:
+Warning: Variable E1403 is never used.
+; While compiling #'alaris_th__on_case_infusionstatusNOTblank at top
+level:
+Warning: Variable E1400 is never used.
+; While compiling #'alaris_th__on_case_infusionstatusNOTblank at top
+level:
+Warning: Variable E1397 is never used.
+; While compiling #'alaris_th__on_case_infusionstatusNOTblank at top
+level:
+Warning: Variable E1394 is never used.
+; While compiling #'alaris_th__on_case_infusionstatusNOTblank at top
+level:
+Warning: Variable E1391 is never used.
+; While compiling #'alaris_th__on_case_infusionstatusNOTblank at top
+level:
+Warning: Variable E1388 is never used.
+; While compiling #'alaris_th__on_case_infusionstatusNOTblank at top
+level:
+Warning: Variable E1385 is never used.
+; While compiling
+#'(:internal alaris_th__on_case_infusionstatusNOTblank 0) at top level:
+Warning: Variable x is never used.
+; While compiling
+#'(:internal alaris_th!on_case_infusionstatusNOTblank 0) at top level:
+Warning: Variable x is never used.
+; While compiling
+#'(:internal alaris_th_on_case_infusionstatusNOTblank 0) at top level:
+Warning: Variable E1536 is never used.
+; While compiling
+#'(:internal alaris_th_on_case_infusionstatusNOTblank 0) at top level:
+Warning: Variable E1533 is never used.
+; While compiling
+#'(:internal alaris_th_on_case_infusionstatusNOTblank 0) at top level:
+Warning: Variable E1530 is never used.
+; While compiling
+#'(:internal alaris_th_on_case_infusionstatusNOTblank 0) at top level:
+Warning: Variable E1527 is never used.
+; While compiling
+#'(:internal alaris_th_on_case_infusionstatusNOTblank 0) at top level:
+Warning: Variable E1524 is never used.
+; While compiling
+#'(:internal alaris_th_on_case_infusionstatusNOTblank 0) at top level:
+Warning: Variable E1521 is never used.
+; While compiling
+#'(:internal alaris_th_on_case_infusionstatusNOTblank 0) at top level:
+Warning: Variable E1518 is never used.
+; While compiling
+#'(:internal alaris_th_on_case_infusionstatusNOTblank 0) at top level:
+Warning: Variable E1515 is never used.
+; While compiling
+#'(:internal alaris_th_on_case_infusionstatusNOTblank 0) at top level:
+Warning: Variable E1512 is never used.
+; While compiling
+#'(:internal alaris_th_on_case_infusionstatusNOTblank 0) at top level:
+Warning: Variable E1509 is never used.
+; While compiling
+#'(:internal alaris_th_on_case_infusionstatusNOTblank 0) at top level:
+Warning: Variable E1506 is never used.
+; While compiling
+#'(:internal (:internal alaris_th_on_case_infusionstatusNOTblank 0) 0)
+at top level:
+Warning: Variable x is never used.
+; While compiling #'pump_th__resetElapsed at top level:
+Warning: Variable E1567 is never used.
+; While compiling #'pump_th__resetElapsed at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'pump_th__resetElapsed at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'pump_th__resetElapsed at top level:
+Warning: Variable timeout is never used.
+; While compiling #'pump_th__resetElapsed at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'pump_th__resetElapsed at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'pump_th__resetElapsed at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'pump_th!resetElapsed at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'pump_th!resetElapsed at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'pump_th!resetElapsed at top level:
+Warning: Variable timeout is never used.
+; While compiling #'pump_th!resetElapsed at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'pump_th!resetElapsed at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'pump_th!resetElapsed at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'pump_th_resetElapsed at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'pump_th_resetElapsed at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'pump_th_resetElapsed at top level:
+Warning: Variable timeout is never used.
+; While compiling #'pump_th_resetElapsed at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'pump_th_resetElapsed at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'pump_th_resetElapsed at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'(:internal pump_th_resetElapsed 0) at top level:
+Warning: Variable E1578 is never used.
+; While compiling #'alaris_th__key2_case_holding_infusing at top level:
+Warning: Variable E1579 is never used.
+; While compiling #'alaris_th__key2_case_holding_infusing at top level:
+Warning: Variable E1561 is never used.
+; While compiling #'alaris_th__key2_case_holding_infusing at top level:
+Warning: Variable E1558 is never used.
+; While compiling #'alaris_th__key2_case_holding_infusing at top level:
+Warning: Variable E1555 is never used.
+; While compiling #'alaris_th__key2_case_holding_infusing at top level:
+Warning: Variable E1552 is never used.
+; While compiling #'alaris_th__key2_case_holding_infusing at top level:
+Warning: Variable E1549 is never used.
+; While compiling #'alaris_th__key2_case_holding_infusing at top level:
+Warning: Variable E1546 is never used.
+; While compiling #'alaris_th__key2_case_holding_infusing at top level:
+Warning: Variable E1543 is never used.
+; While compiling #'(:internal alaris_th_key2_case_holding_infusing 0)
+at top level:
+Warning: Variable E1667 is never used.
+; While compiling #'(:internal alaris_th_key2_case_holding_infusing 0)
+at top level:
+Warning: Variable E1664 is never used.
+; While compiling #'(:internal alaris_th_key2_case_holding_infusing 0)
+at top level:
+Warning: Variable E1661 is never used.
+; While compiling #'(:internal alaris_th_key2_case_holding_infusing 0)
+at top level:
+Warning: Variable E1658 is never used.
+; While compiling #'(:internal alaris_th_key2_case_holding_infusing 0)
+at top level:
+Warning: Variable E1655 is never used.
+; While compiling #'(:internal alaris_th_key2_case_holding_infusing 0)
+at top level:
+Warning: Variable E1652 is never used.
+; While compiling #'(:internal alaris_th_key2_case_holding_infusing 0)
+at top level:
+Warning: Variable E1649 is never used.
+; While compiling #'(:internal alaris_th_key2_case_holding_infusing 0)
+at top level:
+Warning: Variable E1646 is never used.
+; While compiling #'pump_th__clearVolumeinfused at top level:
+Warning: Variable E1686 is never used.
+; While compiling #'pump_th__clearVolumeinfused at top level:
+Warning: Variable E1683 is never used.
+; While compiling #'pump_th__clearVolumeinfused at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'pump_th__clearVolumeinfused at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'pump_th__clearVolumeinfused at top level:
+Warning: Variable timeout is never used.
+; While compiling #'pump_th__clearVolumeinfused at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'pump_th__clearVolumeinfused at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'pump_th__clearVolumeinfused at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'pump_th!clearVolumeinfused at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'pump_th!clearVolumeinfused at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'pump_th!clearVolumeinfused at top level:
+Warning: Variable timeout is never used.
+; While compiling #'pump_th!clearVolumeinfused at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'pump_th!clearVolumeinfused at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'pump_th!clearVolumeinfused at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'pump_th_clearVolumeinfused at top level:
+Warning: Variable maxtime is never used.
+; While compiling #'pump_th_clearVolumeinfused at top level:
+Warning: Variable shorttimeout is never used.
+; While compiling #'pump_th_clearVolumeinfused at top level:
+Warning: Variable timeout is never used.
+; While compiling #'pump_th_clearVolumeinfused at top level:
+Warning: Variable infusemin is never used.
+; While compiling #'pump_th_clearVolumeinfused at top level:
+Warning: Variable maxinfuse is never used.
+; While compiling #'pump_th_clearVolumeinfused at top level:
+Warning: Variable maxrate is never used.
+; While compiling #'(:internal pump_th_clearVolumeinfused 0) at top
+level:
+Warning: Variable E1708 is never used.
+; While compiling #'(:internal pump_th_clearVolumeinfused 0) at top
+level:
+Warning: Variable E1705 is never used.
+; While compiling #'alaris_th__key2_case_volume at top level:
+Warning: Variable E1718 is never used.
+; While compiling #'alaris_th__key2_case_volume at top level:
+Warning: Variable E1715 is never used.
+; While compiling #'alaris_th__key2_case_volume at top level:
+Warning: Variable E1712 is never used.
+; While compiling #'alaris_th__key2_case_volume at top level:
+Warning: Variable E1709 is never used.
+; While compiling #'alaris_th__key2_case_volume at top level:
+Warning: Variable E1677 is never used.
+; While compiling #'alaris_th__key2_case_volume at top level:
+Warning: Variable E1674 is never used.
+; While compiling #'alaris_th__key2_case_volume at top level:
+Warning: Variable E1671 is never used.
+; While compiling #'alaris_th!key2_case_volume at top level:
+Warning: Variable E1739 is never used.
+; While compiling #'alaris_th!key2_case_volume at top level:
+Warning: Variable E1736 is never used.
+; While compiling #'alaris_th!key2_case_volume at top level:
+Warning: Variable E1733 is never used.
+; While compiling #'alaris_th!key2_case_volume at top level:
+Warning: Variable E1730 is never used.
+; While compiling #'alaris_th!key2_case_volume at top level:
+Warning: Variable E1727 is never used.
+; While compiling #'alaris_th!key2_case_volume at top level:
+Warning: Variable E1724 is never used.
+; While compiling #'alaris_th!key2_case_volume at top level:
+Warning: Variable E1721 is never used.
+; While compiling #'(:internal alaris_th_key2_case_volume 0) at top
+level:
+Warning: Variable E1760 is never used.
+; While compiling #'(:internal alaris_th_key2_case_volume 0) at top
+level:
+Warning: Variable E1757 is never used.
+; While compiling #'(:internal alaris_th_key2_case_volume 0) at top
+level:
+Warning: Variable E1754 is never used.
+; While compiling #'(:internal alaris_th_key2_case_volume 0) at top
+level:
+Warning: Variable E1751 is never used.
+; While compiling #'(:internal alaris_th_key2_case_volume 0) at top
+level:
+Warning: Variable E1748 is never used.
+; While compiling #'(:internal alaris_th_key2_case_volume 0) at top
+level:
+Warning: Variable E1745 is never used.
+; While compiling #'(:internal alaris_th_key2_case_volume 0) at top
+level:
+Warning: Variable E1742 is never used.
+; While compiling #'alaris_th__key2_case_dispvtbiORvtbitime at top level:
+Warning: Variable E1785 is never used.
+; While compiling #'alaris_th__key2_case_dispvtbiORvtbitime at top level:
+Warning: Variable E1782 is never used.
+; While compiling #'alaris_th__key2_case_dispvtbiORvtbitime at top level:
+Warning: Variable E1779 is never used.
+; While compiling #'alaris_th__key2_case_dispvtbiORvtbitime at top level:
+Warning: Variable E1776 is never used.
+; While compiling #'alaris_th__key2_case_dispvtbiORvtbitime at top level:
+Warning: Variable E1773 is never used.
+; While compiling #'alaris_th__key2_case_dispvtbiORvtbitime at top level:
+Warning: Variable E1770 is never used.
+; While compiling #'alaris_th__key2_case_dispvtbiORvtbitime at top level:
+Warning: Variable E1767 is never used.
+; While compiling #'alaris_th__key2_case_dispvtbiORvtbitime at top level:
+Warning: Variable E1764 is never used.
+; While compiling
+#'(:internal alaris_th_key2_case_dispvtbiORvtbitime 0) at top level:
+Warning: Variable E1873 is never used.
+; While compiling
+#'(:internal alaris_th_key2_case_dispvtbiORvtbitime 0) at top level:
+Warning: Variable E1870 is never used.
+; While compiling
+#'(:internal alaris_th_key2_case_dispvtbiORvtbitime 0) at top level:
+Warning: Variable E1867 is never used.
+; While compiling
+#'(:internal alaris_th_key2_case_dispvtbiORvtbitime 0) at top level:
+Warning: Variable E1864 is never used.
+; While compiling
+#'(:internal alaris_th_key2_case_dispvtbiORvtbitime 0) at top level:
+Warning: Variable E1861 is never used.
+; While compiling
+#'(:internal alaris_th_key2_case_dispvtbiORvtbitime 0) at top level:
+Warning: Variable E1858 is never used.
+; While compiling
+#'(:internal alaris_th_key2_case_dispvtbiORvtbitime 0) at top level:
+Warning: Variable E1855 is never used.
+; While compiling
+#'(:internal alaris_th_key2_case_dispvtbiORvtbitime 0) at top level:
+Warning: Variable E1852 is never used.
+; While compiling #'alaris_th__key2_case_setvtbi at top level:
+Warning: Variable E1898 is never used.
+; While compiling #'alaris_th__key2_case_setvtbi at top level:
+Warning: Variable E1895 is never used.
+; While compiling #'alaris_th__key2_case_setvtbi at top level:
+Warning: Variable E1892 is never used.
+; While compiling #'alaris_th__key2_case_setvtbi at top level:
+Warning: Variable E1889 is never used.
+; While compiling #'alaris_th__key2_case_setvtbi at top level:
+Warning: Variable E1886 is never used.
+; While compiling #'alaris_th__key2_case_setvtbi at top level:
+Warning: Variable E1883 is never used.
+; While compiling #'alaris_th__key2_case_setvtbi at top level:
+Warning: Variable E1880 is never used.
+; While compiling #'alaris_th__key2_case_setvtbi at top level:
+Warning: Variable E1877 is never used.
+; While compiling #'(:internal alaris_th_key2_case_setvtbi 0) at top
+level:
+Warning: Variable E1986 is never used.
+; While compiling #'(:internal alaris_th_key2_case_setvtbi 0) at top
+level:
+Warning: Variable E1983 is never used.
+; While compiling #'(:internal alaris_th_key2_case_setvtbi 0) at top
+level:
+Warning: Variable E1980 is never used.
+; While compiling #'(:internal alaris_th_key2_case_setvtbi 0) at top
+level:
+Warning: Variable E1977 is never used.
+; While compiling #'(:internal alaris_th_key2_case_setvtbi 0) at top
+level:
+Warning: Variable E1974 is never used.
+; While compiling #'(:internal alaris_th_key2_case_setvtbi 0) at top
+level:
+Warning: Variable E1971 is never used.
+; While compiling #'(:internal alaris_th_key2_case_setvtbi 0) at top
+level:
+Warning: Variable E1968 is never used.
+; While compiling #'(:internal alaris_th_key2_case_setvtbi 0) at top
+level:
+Warning: Variable E1965 is never used.
+; While compiling #'alaris_th__key3_case_attention_clearsetup at top
+level:
+Warning: Variable E2011 is never used.
+; While compiling #'alaris_th__key3_case_attention_clearsetup at top
+level:
+Warning: Variable E2008 is never used.
+; While compiling #'alaris_th__key3_case_attention_clearsetup at top
+level:
+Warning: Variable E2005 is never used.
+; While compiling #'alaris_th__key3_case_attention_clearsetup at top
+level:
+Warning: Variable E2002 is never used.
+; While compiling #'alaris_th__key3_case_attention_clearsetup at top
+level:
+Warning: Variable E1999 is never used.
+; While compiling #'alaris_th__key3_case_attention_clearsetup at top
+level:
+Warning: Variable E1996 is never used.
+; While compiling #'alaris_th__key3_case_attention_clearsetup at top
+level:
+Warning: Variable E1993 is never used.
+; While compiling #'alaris_th!key3_case_attention_clearsetup at top
+level:
+Warning: Variable E2032 is never used.
+; While compiling #'alaris_th!key3_case_attention_clearsetup at top
+level:
+Warning: Variable E2029 is never used.
+; While compiling #'alaris_th!key3_case_attention_clearsetup at top
+level:
+Warning: Variable E2026 is never used.
+; While compiling #'alaris_th!key3_case_attention_clearsetup at top
+level:
+Warning: Variable E2023 is never used.
+; While compiling #'alaris_th!key3_case_attention_clearsetup at top
+level:
+Warning: Variable E2020 is never used.
+; While compiling #'alaris_th!key3_case_attention_clearsetup at top
+level:
+Warning: Variable E2017 is never used.
+; While compiling #'alaris_th!key3_case_attention_clearsetup at top
+level:
+Warning: Variable E2014 is never used.
+; While compiling
+#'(:internal alaris_th_key3_case_attention_clearsetup 0) at top level:
+Warning: Variable E2053 is never used.
+; While compiling
+#'(:internal alaris_th_key3_case_attention_clearsetup 0) at top level:
+Warning: Variable E2050 is never used.
+; While compiling
+#'(:internal alaris_th_key3_case_attention_clearsetup 0) at top level:
+Warning: Variable E2047 is never used.
+; While compiling
+#'(:internal alaris_th_key3_case_attention_clearsetup 0) at top level:
+Warning: Variable E2044 is never used.
+; While compiling
+#'(:internal alaris_th_key3_case_attention_clearsetup 0) at top level:
+Warning: Variable E2041 is never used.
+; While compiling
+#'(:internal alaris_th_key3_case_attention_clearsetup 0) at top level:
+Warning: Variable E2038 is never used.
+; While compiling
+#'(:internal alaris_th_key3_case_attention_clearsetup 0) at top level:
+Warning: Variable E2035 is never used.
+; While compiling #'alaris_th__key3_case_volume at top level:
+Warning: Variable E2075 is never used.
+; While compiling #'alaris_th__key3_case_volume at top level:
+Warning: Variable E2072 is never used.
+; While compiling #'alaris_th__key3_case_volume at top level:
+Warning: Variable E2069 is never used.
+; While compiling #'alaris_th__key3_case_volume at top level:
+Warning: Variable E2066 is never used.
+; While compiling #'alaris_th__key3_case_volume at top level:
+Warning: Variable E2063 is never used.
+; While compiling #'alaris_th__key3_case_volume at top level:
+Warning: Variable E2060 is never used.
+; While compiling #'alaris_th__key3_case_volume at top level:
+Warning: Variable E2057 is never used.
+; While compiling #'alaris_th!key3_case_volume at top level:
+Warning: Variable E2096 is never used.
+; While compiling #'alaris_th!key3_case_volume at top level:
+Warning: Variable E2093 is never used.
+; While compiling #'alaris_th!key3_case_volume at top level:
+Warning: Variable E2090 is never used.
+; While compiling #'alaris_th!key3_case_volume at top level:
+Warning: Variable E2087 is never used.
+; While compiling #'alaris_th!key3_case_volume at top level:
+Warning: Variable E2084 is never used.
+; While compiling #'alaris_th!key3_case_volume at top level:
+Warning: Variable E2081 is never used.
+; While compiling #'alaris_th!key3_case_volume at top level:
+Warning: Variable E2078 is never used.
+; While compiling #'(:internal alaris_th_key3_case_volume 0) at top
+level:
+Warning: Variable E2117 is never used.
+; While compiling #'(:internal alaris_th_key3_case_volume 0) at top
+level:
+Warning: Variable E2114 is never used.
+; While compiling #'(:internal alaris_th_key3_case_volume 0) at top
+level:
+Warning: Variable E2111 is never used.
+; While compiling #'(:internal alaris_th_key3_case_volume 0) at top
+level:
+Warning: Variable E2108 is never used.
+; While compiling #'(:internal alaris_th_key3_case_volume 0) at top
+level:
+Warning: Variable E2105 is never used.
+; While compiling #'(:internal alaris_th_key3_case_volume 0) at top
+level:
+Warning: Variable E2102 is never used.
+; While compiling #'(:internal alaris_th_key3_case_volume 0) at top
+level:
+Warning: Variable E2099 is never used.
+; While compiling #'alaris_th__key3_case_vtbidone at top level:
+Warning: Variable E2139 is never used.
+; While compiling #'alaris_th__key3_case_vtbidone at top level:
+Warning: Variable E2136 is never used.
+; While compiling #'alaris_th__key3_case_vtbidone at top level:
+Warning: Variable E2133 is never used.
+; While compiling #'alaris_th__key3_case_vtbidone at top level:
+Warning: Variable E2130 is never used.
+; While compiling #'alaris_th__key3_case_vtbidone at top level:
+Warning: Variable E2127 is never used.
+; While compiling #'alaris_th__key3_case_vtbidone at top level:
+Warning: Variable E2124 is never used.
+; While compiling #'alaris_th__key3_case_vtbidone at top level:
+Warning: Variable E2121 is never used.
+; While compiling #'(:internal alaris_th_key3_case_vtbidone 0) at top
+level:
+Warning: Variable E2216 is never used.
+; While compiling #'(:internal alaris_th_key3_case_vtbidone 0) at top
+level:
+Warning: Variable E2213 is never used.
+; While compiling #'(:internal alaris_th_key3_case_vtbidone 0) at top
+level:
+Warning: Variable E2210 is never used.
+; While compiling #'(:internal alaris_th_key3_case_vtbidone 0) at top
+level:
+Warning: Variable E2207 is never used.
+; While compiling #'(:internal alaris_th_key3_case_vtbidone 0) at top
+level:
+Warning: Variable E2204 is never used.
+; While compiling #'(:internal alaris_th_key3_case_vtbidone 0) at top
+level:
+Warning: Variable E2201 is never used.
+; While compiling #'(:internal alaris_th_key3_case_vtbidone 0) at top
+level:
+Warning: Variable E2198 is never used.
+; While compiling #'alaris_th__key3_case_dispvtbi_vtmode at top level:
+Warning: Variable E2238 is never used.
+; While compiling #'alaris_th__key3_case_dispvtbi_vtmode at top level:
+Warning: Variable E2235 is never used.
+; While compiling #'alaris_th__key3_case_dispvtbi_vtmode at top level:
+Warning: Variable E2232 is never used.
+; While compiling #'alaris_th__key3_case_dispvtbi_vtmode at top level:
+Warning: Variable E2229 is never used.
+; While compiling #'alaris_th__key3_case_dispvtbi_vtmode at top level:
+Warning: Variable E2226 is never used.
+; While compiling #'alaris_th__key3_case_dispvtbi_vtmode at top level:
+Warning: Variable E2223 is never used.
+; While compiling #'alaris_th__key3_case_dispvtbi_vtmode at top level:
+Warning: Variable E2220 is never used.
+; While compiling #'alaris_th!key3_case_dispvtbi_vtmode at top level:
+Warning: Variable E2259 is never used.
+; While compiling #'alaris_th!key3_case_dispvtbi_vtmode at top level:
+Warning: Variable E2256 is never used.
+; While compiling #'alaris_th!key3_case_dispvtbi_vtmode at top level:
+Warning: Variable E2253 is never used.
+; While compiling #'alaris_th!key3_case_dispvtbi_vtmode at top level:
+Warning: Variable E2250 is never used.
+; While compiling #'alaris_th!key3_case_dispvtbi_vtmode at top level:
+Warning: Variable E2247 is never used.
+; While compiling #'alaris_th!key3_case_dispvtbi_vtmode at top level:
+Warning: Variable E2244 is never used.
+; While compiling #'alaris_th!key3_case_dispvtbi_vtmode at top level:
+Warning: Variable E2241 is never used.
+; While compiling #'(:internal alaris_th_key3_case_dispvtbi_vtmode 0)
+at top level:
+Warning: Variable E2280 is never used.
+; While compiling #'(:internal alaris_th_key3_case_dispvtbi_vtmode 0)
+at top level:
+Warning: Variable E2277 is never used.
+; While compiling #'(:internal alaris_th_key3_case_dispvtbi_vtmode 0)
+at top level:
+Warning: Variable E2274 is never used.
+; While compiling #'(:internal alaris_th_key3_case_dispvtbi_vtmode 0)
+at top level:
+Warning: Variable E2271 is never used.
+; While compiling #'(:internal alaris_th_key3_case_dispvtbi_vtmode 0)
+at top level:
+Warning: Variable E2268 is never used.
+; While compiling #'(:internal alaris_th_key3_case_dispvtbi_vtmode 0)
+at top level:
+Warning: Variable E2265 is never used.
+; While compiling #'(:internal alaris_th_key3_case_dispvtbi_vtmode 0)
+at top level:
+Warning: Variable E2262 is never used.
+; While compiling #'alaris_th__key3_case_dispvtbi_bagmode at top level:
+Warning: Variable E2302 is never used.
+; While compiling #'alaris_th__key3_case_dispvtbi_bagmode at top level:
+Warning: Variable E2299 is never used.
+; While compiling #'alaris_th__key3_case_dispvtbi_bagmode at top level:
+Warning: Variable E2296 is never used.
+; While compiling #'alaris_th__key3_case_dispvtbi_bagmode at top level:
+Warning: Variable E2293 is never used.
+; While compiling #'alaris_th__key3_case_dispvtbi_bagmode at top level:
+Warning: Variable E2290 is never used.
+; While compiling #'alaris_th__key3_case_dispvtbi_bagmode at top level:
+Warning: Variable E2287 is never used.
+; While compiling #'alaris_th__key3_case_dispvtbi_bagmode at top level:
+Warning: Variable E2284 is never used.
+; While compiling #'(:internal alaris_th_key3_case_dispvtbi_bagmode 0)
+at top level:
+Warning: Variable E2379 is never used.
+; While compiling #'(:internal alaris_th_key3_case_dispvtbi_bagmode 0)
+at top level:
+Warning: Variable E2376 is never used.
+; While compiling #'(:internal alaris_th_key3_case_dispvtbi_bagmode 0)
+at top level:
+Warning: Variable E2373 is never used.
+; While compiling #'(:internal alaris_th_key3_case_dispvtbi_bagmode 0)
+at top level:
+Warning: Variable E2370 is never used.
+; While compiling #'(:internal alaris_th_key3_case_dispvtbi_bagmode 0)
+at top level:
+Warning: Variable E2367 is never used.
+; While compiling #'(:internal alaris_th_key3_case_dispvtbi_bagmode 0)
+at top level:
+Warning: Variable E2364 is never used.
+; While compiling #'(:internal alaris_th_key3_case_dispvtbi_bagmode 0)
+at top level:
+Warning: Variable E2361 is never used.
+; While compiling #'alaris_th__key3_case_dispvtbi_tbagmode at top level:
+Warning: Variable E2401 is never used.
+; While compiling #'alaris_th__key3_case_dispvtbi_tbagmode at top level:
+Warning: Variable E2398 is never used.
+; While compiling #'alaris_th__key3_case_dispvtbi_tbagmode at top level:
+Warning: Variable E2395 is never used.
+; While compiling #'alaris_th__key3_case_dispvtbi_tbagmode at top level:
+Warning: Variable E2392 is never used.
+; While compiling #'alaris_th__key3_case_dispvtbi_tbagmode at top level:
+Warning: Variable E2389 is never used.
+; While compiling #'alaris_th__key3_case_dispvtbi_tbagmode at top level:
+Warning: Variable E2386 is never used.
+; While compiling #'alaris_th__key3_case_dispvtbi_tbagmode at top level:
+Warning: Variable E2383 is never used.
+; While compiling #'(:internal alaris_th_key3_case_dispvtbi_tbagmode 0)
+at top level:
+Warning: Variable E2478 is never used.
+; While compiling #'(:internal alaris_th_key3_case_dispvtbi_tbagmode 0)
+at top level:
+Warning: Variable E2475 is never used.
+; While compiling #'(:internal alaris_th_key3_case_dispvtbi_tbagmode 0)
+at top level:
+Warning: Variable E2472 is never used.
+; While compiling #'(:internal alaris_th_key3_case_dispvtbi_tbagmode 0)
+at top level:
+Warning: Variable E2469 is never used.
+; While compiling #'(:internal alaris_th_key3_case_dispvtbi_tbagmode 0)
+at top level:
+Warning: Variable E2466 is never used.
+; While compiling #'(:internal alaris_th_key3_case_dispvtbi_tbagmode 0)
+at top level:
+Warning: Variable E2463 is never used.
+; While compiling #'(:internal alaris_th_key3_case_dispvtbi_tbagmode 0)
+at top level:
+Warning: Variable E2460 is never used.
+; While compiling #'alaris_th__key3_case_setvtbi at top level:
+Warning: Variable E2500 is never used.
+; While compiling #'alaris_th__key3_case_setvtbi at top level:
+Warning: Variable E2497 is never used.
+; While compiling #'alaris_th__key3_case_setvtbi at top level:
+Warning: Variable E2494 is never used.
+; While compiling #'alaris_th__key3_case_setvtbi at top level:
+Warning: Variable E2491 is never used.
+; While compiling #'alaris_th__key3_case_setvtbi at top level:
+Warning: Variable E2488 is never used.
+; While compiling #'alaris_th__key3_case_setvtbi at top level:
+Warning: Variable E2485 is never used.
+; While compiling #'alaris_th__key3_case_setvtbi at top level:
+Warning: Variable E2482 is never used.
+; While compiling #'(:internal alaris_th_key3_case_setvtbi 0) at top
+level:
+Warning: Variable E2577 is never used.
+; While compiling #'(:internal alaris_th_key3_case_setvtbi 0) at top
+level:
+Warning: Variable E2574 is never used.
+; While compiling #'(:internal alaris_th_key3_case_setvtbi 0) at top
+level:
+Warning: Variable E2571 is never used.
+; While compiling #'(:internal alaris_th_key3_case_setvtbi 0) at top
+level:
+Warning: Variable E2568 is never used.
+; While compiling #'(:internal alaris_th_key3_case_setvtbi 0) at top
+level:
+Warning: Variable E2565 is never used.
+; While compiling #'(:internal alaris_th_key3_case_setvtbi 0) at top
+level:
+Warning: Variable E2562 is never used.
+; While compiling #'(:internal alaris_th_key3_case_setvtbi 0) at top
+level:
+Warning: Variable E2559 is never used.
+; While compiling #'alaris_th__key3_case_optionsORdispinfo at top level:
+Warning: Variable E2599 is never used.
+; While compiling #'alaris_th__key3_case_optionsORdispinfo at top level:
+Warning: Variable E2596 is never used.
+; While compiling #'alaris_th__key3_case_optionsORdispinfo at top level:
+Warning: Variable E2593 is never used.
+; While compiling #'alaris_th__key3_case_optionsORdispinfo at top level:
+Warning: Variable E2590 is never used.
+; While compiling #'alaris_th__key3_case_optionsORdispinfo at top level:
+Warning: Variable E2587 is never used.
+; While compiling #'alaris_th__key3_case_optionsORdispinfo at top level:
+Warning: Variable E2584 is never used.
+; While compiling #'alaris_th__key3_case_optionsORdispinfo at top level:
+Warning: Variable E2581 is never used.
+; While compiling #'alaris_th!key3_case_optionsORdispinfo at top level:
+Warning: Variable E2620 is never used.
+; While compiling #'alaris_th!key3_case_optionsORdispinfo at top level:
+Warning: Variable E2617 is never used.
+; While compiling #'alaris_th!key3_case_optionsORdispinfo at top level:
+Warning: Variable E2614 is never used.
+; While compiling #'alaris_th!key3_case_optionsORdispinfo at top level:
+Warning: Variable E2611 is never used.
+; While compiling #'alaris_th!key3_case_optionsORdispinfo at top level:
+Warning: Variable E2608 is never used.
+; While compiling #'alaris_th!key3_case_optionsORdispinfo at top level:
+Warning: Variable E2605 is never used.
+; While compiling #'alaris_th!key3_case_optionsORdispinfo at top level:
+Warning: Variable E2602 is never used.
+; While compiling #'(:internal alaris_th_key3_case_optionsORdispinfo 0)
+at top level:
+Warning: Variable E2641 is never used.
+; While compiling #'(:internal alaris_th_key3_case_optionsORdispinfo 0)
+at top level:
+Warning: Variable E2638 is never used.
+; While compiling #'(:internal alaris_th_key3_case_optionsORdispinfo 0)
+at top level:
+Warning: Variable E2635 is never used.
+; While compiling #'(:internal alaris_th_key3_case_optionsORdispinfo 0)
+at top level:
+Warning: Variable E2632 is never used.
+; While compiling #'(:internal alaris_th_key3_case_optionsORdispinfo 0)
+at top level:
+Warning: Variable E2629 is never used.
+; While compiling #'(:internal alaris_th_key3_case_optionsORdispinfo 0)
+at top level:
+Warning: Variable E2626 is never used.
+; While compiling #'(:internal alaris_th_key3_case_optionsORdispinfo 0)
+at top level:
+Warning: Variable E2623 is never used.
+; While compiling #'alaris_th__key3_case_vtbitime_vttmode at top level:
+Warning: Variable E2663 is never used.
+; While compiling #'alaris_th__key3_case_vtbitime_vttmode at top level:
+Warning: Variable E2660 is never used.
+; While compiling #'alaris_th__key3_case_vtbitime_vttmode at top level:
+Warning: Variable E2657 is never used.
+; While compiling #'alaris_th__key3_case_vtbitime_vttmode at top level:
+Warning: Variable E2654 is never used.
+; While compiling #'alaris_th__key3_case_vtbitime_vttmode at top level:
+Warning: Variable E2651 is never used.
+; While compiling #'alaris_th__key3_case_vtbitime_vttmode at top level:
+Warning: Variable E2648 is never used.
+; While compiling #'alaris_th__key3_case_vtbitime_vttmode at top level:
+Warning: Variable E2645 is never used.
+; While compiling #'alaris_th!key3_case_vtbitime_vttmode at top level:
+Warning: Variable E2684 is never used.
+; While compiling #'alaris_th!key3_case_vtbitime_vttmode at top level:
+Warning: Variable E2681 is never used.
+; While compiling #'alaris_th!key3_case_vtbitime_vttmode at top level:
+Warning: Variable E2678 is never used.
+; While compiling #'alaris_th!key3_case_vtbitime_vttmode at top level:
+Warning: Variable E2675 is never used.
+; While compiling #'alaris_th!key3_case_vtbitime_vttmode at top level:
+Warning: Variable E2672 is never used.
+; While compiling #'alaris_th!key3_case_vtbitime_vttmode at top level:
+Warning: Variable E2669 is never used.
+; While compiling #'alaris_th!key3_case_vtbitime_vttmode at top level:
+Warning: Variable E2666 is never used.
+; While compiling #'(:internal alaris_th_key3_case_vtbitime_vttmode 0)
+at top level:
+Warning: Variable E2705 is never used.
+; While compiling #'(:internal alaris_th_key3_case_vtbitime_vttmode 0)
+at top level:
+Warning: Variable E2702 is never used.
+; While compiling #'(:internal alaris_th_key3_case_vtbitime_vttmode 0)
+at top level:
+Warning: Variable E2699 is never used.
+; While compiling #'(:internal alaris_th_key3_case_vtbitime_vttmode 0)
+at top level:
+Warning: Variable E2696 is never used.
+; While compiling #'(:internal alaris_th_key3_case_vtbitime_vttmode 0)
+at top level:
+Warning: Variable E2693 is never used.
+; While compiling #'(:internal alaris_th_key3_case_vtbitime_vttmode 0)
+at top level:
+Warning: Variable E2690 is never used.
+; While compiling #'(:internal alaris_th_key3_case_vtbitime_vttmode 0)
+at top level:
+Warning: Variable E2687 is never used.
+; While compiling #'alaris_th__key3_case_vtbitime_ttmode at top level:
+Warning: Variable E2724 is never used.
+; While compiling #'alaris_th__key3_case_vtbitime_ttmode at top level:
+Warning: Variable E2721 is never used.
+; While compiling #'alaris_th__key3_case_vtbitime_ttmode at top level:
+Warning: Variable E2718 is never used.
+; While compiling #'alaris_th__key3_case_vtbitime_ttmode at top level:
+Warning: Variable E2715 is never used.
+; While compiling #'alaris_th__key3_case_vtbitime_ttmode at top level:
+Warning: Variable E2712 is never used.
+; While compiling #'alaris_th__key3_case_vtbitime_ttmode at top level:
+Warning: Variable E2709 is never used.
+; While compiling #'(:internal alaris_th_key3_case_vtbitime_ttmode 0)
+at top level:
+Warning: Variable E2790 is never used.
+; While compiling #'(:internal alaris_th_key3_case_vtbitime_ttmode 0)
+at top level:
+Warning: Variable E2787 is never used.
+; While compiling #'(:internal alaris_th_key3_case_vtbitime_ttmode 0)
+at top level:
+Warning: Variable E2784 is never used.
+; While compiling #'(:internal alaris_th_key3_case_vtbitime_ttmode 0)
+at top level:
+Warning: Variable E2781 is never used.
+; While compiling #'(:internal alaris_th_key3_case_vtbitime_ttmode 0)
+at top level:
+Warning: Variable E2778 is never used.
+; While compiling #'(:internal alaris_th_key3_case_vtbitime_ttmode 0)
+at top level:
+Warning: Variable E2775 is never used.

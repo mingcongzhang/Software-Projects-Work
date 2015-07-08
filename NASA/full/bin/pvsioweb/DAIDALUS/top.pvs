@@ -1,0 +1,9 @@
+top : THEORY
+BEGIN
+ 
+  HelloWorld : string = "Hello World"
+
+  main : void =
+    println(HelloWorld)
+
+END top
