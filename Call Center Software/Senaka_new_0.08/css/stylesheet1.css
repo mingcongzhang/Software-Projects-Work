@@ -1,0 +1,157 @@
+.header-container {
+	position: relative;
+}
+
+.navcontainer {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: auto;
+	height: auto;
+	float: none;
+}
+
+.navcontainer ul, .navcontainer ul li {
+	height: auto;
+}
+
+.navcontainer ul li a,
+.navcontainer ul li a:hover,
+.navcontainer ul li.active a,
+.navcontainer ul li a.big,
+.navcontainer ul li a.medium,
+.navcontainer ul li a.small
+ {
+    width:auto;
+	height: 30px;
+	margin: 0 0 0 5px;
+	padding:0 10px;
+	background: #00a5f7;
+	color: #f4f4f4;
+	border: 1px solid #008cc0;
+	border-bottom: 0;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+	box-shadow: 0 2px 0 -1px #47beec inset;
+	-moz-box-shadow: 0 2px 0 -1px #47beec inset;
+	-webkit-box-shadow: 0 2px 0 -1px #47beec inset;
+	text-decoration: none;
+	text-align: center;
+	font: bold 12px Arial, Helvetica, sans-serif;
+	line-height: 30px;
+	display:block;
+	text-transform:uppercase;
+}
+
+.navcontainer ul li a:hover, .navcontainer ul li.active a {
+/*	background: #0bf; */
+	background: #03f;
+	background: #191820;
+	color: #fff;
+}
+
+.secondary-nav {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.secondary-nav ul {
+	list-style: none;
+	margin-top: 5px;
+}
+.secondary-nav ul li {
+	display: inline;
+	padding: 5px 0 0 5px;
+}
+.secondary-nav ul li:before {
+	content: '|';
+	padding-right: 5px;
+}
+.secondary-nav ul li:first-child:before {
+	content: none;
+}
+.secondary-nav ul li a {
+	color: #666;
+}
+.secondary-nav ul li a:hover {
+	color: #888;
+}
+.call-form {
+	width: 100%;
+}
+.form-item {
+	clear: both;
+	overflow: hidden;
+	padding: 20px 0;
+}
+.form-item div {
+	margin: 0;
+}
+.form-item-desc {
+	width: 27%;
+	float: left;
+}
+.form-item-field {
+	width: 70%;
+	float: right;
+}
+.technology-left-box {
+	width: 640px;
+}
+textarea {
+	width: 98%
+}
+input[type=submit] {
+	padding: 2px 5px;
+	font-weight: bold;
+}
+table {
+	width: 100%;
+}
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+	border-bottom: 1px solid #aaa;
+	border-right: 1px solid #aaa;
+}
+th {
+	background: #eee;
+}
+td, th {
+	padding: 2px;
+	border-top: 1px solid #aaa;
+	border-left: 1px solid #aaa;
+}	
+
+
+.solidbase-left-box {
+        width: 700px;
+        width:900px;
+        height:auto;
+        float:left;
+        text-align:left;
+}
+
+.solidbase-right-box
+{
+        width:200px;
+        height:auto;
+        float:right;
+        text-align:left;
+}
+
+/* stolen from this below */
+/* .contact-support-box */
+.solidbase-support-box 
+{
+        width:180px;
+        height:auto;
+        float:left;
+        text-align:left;
+        background-color: #f1f1f1;
+        border:1px solid #dddddd;
+        padding:15px 19px 12px 19px;
+        margin-bottom:20px;
+}
+
+
