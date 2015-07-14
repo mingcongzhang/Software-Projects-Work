@@ -59,7 +59,7 @@ public class Demo extends ApplicationTemplate {
 
 		public AppFrame() throws InterruptedException {
 			// Create an iterable of the objects we want to keep in view.
-			this.objectsToTrack = createObjectsToTrack();
+			this.objectsToTrack = createObjectsToTrack(50.0,50.0);
 			// Set up a view controller to keep the objects in view.
 			this.viewController = new ViewController(this.getWwd());
 			this.viewController.setObjectsToTrack(this.objectsToTrack);
@@ -67,7 +67,7 @@ public class Demo extends ApplicationTemplate {
 			this.addObjectsToWorldWindow(this.objectsToTrack);
 			// Set up swing components to toggle the view controller's
 			// behavior.
-			this.initSwingComponents();
+			//this.initSwingComponents();
 
 			// Set up a one-shot timer to zoom to the objects once the app
 			// launches.
@@ -79,15 +79,54 @@ public class Demo extends ApplicationTemplate {
 			});
 			timer.setRepeats(false);
 			timer.start();
-			new java.util.Timer().schedule(new java.util.TimerTask() {
-				@Override
-				public void run() {
-					System.out.println("Fixed");
-					
-					
-				}
-			}, 6000);
+			//this.update(getGraphics());
 			
+
+//			new java.util.Timer().schedule(new java.util.TimerTask() {
+//				@Override
+//				public void run() {
+//					System.out.println("Fixed");
+//					 Iterable<?> ot;
+//					ot = createObjectsToTrack(100.0,100.0);
+//					//ViewController viewController;
+//					// Set up a view controller to keep the objects in view.
+//					viewController = new ViewController(getWwd());
+//					viewController.setObjectsToTrack(ot);
+//					// Set up a layer to render the objects we're tracking.
+//					addObjectsToWorldWindow(ot);
+//					//initSwingComponents();
+//					Timer timer = new Timer(1000, new ActionListener() {
+//						public void actionPerformed(ActionEvent e) {
+//							// enableHelpAnnotation();
+//							viewController.gotoScene();
+//						}
+//					});
+//					timer.setRepeats(false);
+//					timer.start();
+//				}
+//			}, 6000);
+//			this.update(getGraphics());
+			
+			
+			
+//			System.out.println("Fixed");
+//			 Iterable<?> ot;
+//			ot = createObjectsToTrack(100.0,100.0);
+//			//ViewController viewController;
+//			// Set up a view controller to keep the objects in view.
+//			viewController = new ViewController(getWwd());
+//			viewController.setObjectsToTrack(ot);
+//			// Set up a layer to render the objects we're tracking.
+//			addObjectsToWorldWindow(ot);
+//			//initSwingComponents();
+//			 timer = new Timer(1000, new ActionListener() {
+//				public void actionPerformed(ActionEvent e) {
+//					// enableHelpAnnotation();
+//					viewController.gotoScene();
+//				}
+//			});
+//			timer.setRepeats(false);
+//			timer.start();
 			
 			
 			// getWwd().getModel().getGlobe().getTessellator()
@@ -250,7 +289,7 @@ public class Demo extends ApplicationTemplate {
 		}
 	}
 
-	public static Iterable<?> createObjectsToTrack() {
+	public static Iterable<?> createObjectsToTrack(Double a, Double b) {
 		ArrayList<Object> objects = new ArrayList<Object>();
 		Sector sector = Sector.fromDegrees(35, 45, -110, -100);
 
@@ -258,8 +297,8 @@ public class Demo extends ApplicationTemplate {
 
 		// Add the ownship.
 		randLocation1 = randomLocation(sector);
-		Angle la = Angle.fromDegreesLatitude(0);
-		Angle lo = Angle.fromDegreesLongitude(0);
+		Angle la = Angle.fromDegreesLatitude(a);
+		Angle lo = Angle.fromDegreesLongitude(b);
 		
 		
 		
