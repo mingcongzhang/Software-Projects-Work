@@ -5,6 +5,7 @@
  */
 package gov.nasa.worldwindx.examples;
 
+import gov.nasa.larcfm.ACCoRD.KinematicBands;
 import gov.nasa.worldwind.*;
 import gov.nasa.worldwind.animation.*;
 import gov.nasa.worldwind.avlist.*;
@@ -46,11 +47,14 @@ import java.util.*;
  * @version $Id: KeepingObjectsInView.java 1171 2013-02-11 21:45:02Z dcollins $
  */
 public class Demo extends ApplicationTemplate {
-	public static class AppFrame extends ApplicationTemplate.AppFrame
-			implements RenderingListener {
+	public static class AppFrame extends ApplicationTemplate.AppFrame {
 		protected Iterable<?> objectsToTrack;
 		protected ViewController viewController;
+		protected ViewController vc;
 		protected RenderableLayer helpLayer;
+		static KinematicBands bandInfo;
+		public static ArrayList<gov.nasa.larcfm.Util.Position> intruderPos;
+		static gov.nasa.larcfm.Util.Position ownPos;
 
 		Animator animator;
 		double rotationRate = 70; // degrees per second
@@ -58,8 +62,26 @@ public class Demo extends ApplicationTemplate {
 		Position eyePosition = Position.fromDegrees(0, 0, 20000000);
 
 		public AppFrame() throws InterruptedException {
+
+			MingcongProject mingcong = new MingcongProject(433.0);
+			this.bandInfo = mingcong.getBandInfo();
+			this.intruderPos = mingcong.getIntruderPos();
+			this.ownPos = mingcong.getOwnPosition();
+
+			for (int i = 0; i < bandInfo.trackLength(); ++i) {
+				System.out.println(bandInfo.track(i, "deg") + " "
+						+ bandInfo.trackRegion(i));
+
+			}
+			int x = this.getWidth();
+			int y = this.getHeight();
+			System.out.println(x + " " + y);
+			this.add(new DrawArc());
+			// System.out.println(bandInfo.get(0).track(0, "deg"));
+			// System.out.println(ownPos.lat()+" "+ownPos.lon());
 			// Create an iterable of the objects we want to keep in view.
-			this.objectsToTrack = createObjectsToTrack(50.0,50.0);
+			this.objectsToTrack = createObjectsToTrack(ownPos.lat(),
+					ownPos.lon(), intruderPos);
 			// Set up a view controller to keep the objects in view.
 			this.viewController = new ViewController(this.getWwd());
 			this.viewController.setObjectsToTrack(this.objectsToTrack);
@@ -67,11 +89,11 @@ public class Demo extends ApplicationTemplate {
 			this.addObjectsToWorldWindow(this.objectsToTrack);
 			// Set up swing components to toggle the view controller's
 			// behavior.
-			//this.initSwingComponents();
+			// this.initSwingComponents();
 
 			// Set up a one-shot timer to zoom to the objects once the app
 			// launches.
-			Timer timer = new Timer(1000, new ActionListener() {
+			Timer timer = new Timer(800, new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					// enableHelpAnnotation();
 					viewController.gotoScene();
@@ -79,56 +101,52 @@ public class Demo extends ApplicationTemplate {
 			});
 			timer.setRepeats(false);
 			timer.start();
-			//this.update(getGraphics());
-			
+			// this.update(getGraphics());
 
-//			new java.util.Timer().schedule(new java.util.TimerTask() {
-//				@Override
-//				public void run() {
-//					System.out.println("Fixed");
-//					 Iterable<?> ot;
-//					ot = createObjectsToTrack(100.0,100.0);
-//					//ViewController viewController;
-//					// Set up a view controller to keep the objects in view.
-//					viewController = new ViewController(getWwd());
-//					viewController.setObjectsToTrack(ot);
-//					// Set up a layer to render the objects we're tracking.
-//					addObjectsToWorldWindow(ot);
-//					//initSwingComponents();
-//					Timer timer = new Timer(1000, new ActionListener() {
-//						public void actionPerformed(ActionEvent e) {
-//							// enableHelpAnnotation();
-//							viewController.gotoScene();
-//						}
-//					});
-//					timer.setRepeats(false);
-//					timer.start();
-//				}
-//			}, 6000);
-//			this.update(getGraphics());
-			
-			
-			
-//			System.out.println("Fixed");
-//			 Iterable<?> ot;
-//			ot = createObjectsToTrack(100.0,100.0);
-//			//ViewController viewController;
-//			// Set up a view controller to keep the objects in view.
-//			viewController = new ViewController(getWwd());
-//			viewController.setObjectsToTrack(ot);
-//			// Set up a layer to render the objects we're tracking.
-//			addObjectsToWorldWindow(ot);
-//			//initSwingComponents();
-//			 timer = new Timer(1000, new ActionListener() {
-//				public void actionPerformed(ActionEvent e) {
-//					// enableHelpAnnotation();
-//					viewController.gotoScene();
-//				}
-//			});
-//			timer.setRepeats(false);
-//			timer.start();
-			
-			
+			// new java.util.Timer().schedule(new java.util.TimerTask() {
+			// @Override
+			// public void run() {
+			// System.out.println("Fixed");
+			// Iterable<?> ot;
+			// ot = createObjectsToTrack(100.0,100.0);
+			// //ViewController viewController;
+			// // Set up a view controller to keep the objects in view.
+			// vc = new ViewController(getWwd());
+			// vc.setObjectsToTrack(ot);
+			// // Set up a layer to render the objects we're tracking.
+			// addObjectsToWorldWindow(ot);
+			// //initSwingComponents();
+			// Timer timer = new Timer(1000, new ActionListener() {
+			// public void actionPerformed(ActionEvent e) {
+			// // enableHelpAnnotation();
+			// vc.gotoScene();
+			// }
+			// });
+			// timer.setRepeats(false);
+			// timer.start();
+			// }
+			// }, 5000);
+			// this.getLayerPanel().update(this.getWwd());
+
+			// System.out.println("Fixed");
+			// Iterable<?> ot;
+			// ot = createObjectsToTrack(100.0,100.0);
+			// //ViewController viewController;
+			// // Set up a view controller to keep the objects in view.
+			// viewController = new ViewController(getWwd());
+			// viewController.setObjectsToTrack(ot);
+			// // Set up a layer to render the objects we're tracking.
+			// addObjectsToWorldWindow(ot);
+			// //initSwingComponents();
+			// timer = new Timer(1000, new ActionListener() {
+			// public void actionPerformed(ActionEvent e) {
+			// // enableHelpAnnotation();
+			// viewController.gotoScene();
+			// }
+			// });
+			// timer.setRepeats(false);
+			// timer.start();
+
 			// getWwd().getModel().getGlobe().getTessellator()
 			// .setUpdateFrequency(5000);
 			//
@@ -145,32 +163,32 @@ public class Demo extends ApplicationTemplate {
 
 		}
 
-		@Override
-		public void stageChanged(RenderingEvent event) {
-			if (event.getStage().equals(RenderingEvent.BEFORE_RENDERING)) {
-				// The globe may not be instantiated the first time the
-				// listener is called.
-				if (getWwd().getView().getGlobe() == null)
-					return;
-
-				long now = System.currentTimeMillis();
-				double d = rotationRate * (now - lastTime) * 1.0e-3;
-				lastTime = now;
-
-				double longitude = eyePosition.getLongitude().degrees;
-				longitude += d;
-				if (longitude > 180)
-					longitude = -180 + (180 - longitude);
-
-				eyePosition = Position.fromDegrees(
-						eyePosition.getLatitude().degrees, longitude,
-						eyePosition.getAltitude());
-				Position groundPos = new Position(
-						eyePosition.getLatitude(),
-						eyePosition.getLongitude(), 0);
-				getWwd().getView().setOrientation(eyePosition, groundPos);
-			}
-		}
+		// @Override
+		// public void stageChanged(RenderingEvent event) {
+		// if (event.getStage().equals(RenderingEvent.BEFORE_RENDERING)) {
+		// // The globe may not be instantiated the first time the
+		// // listener is called.
+		// if (getWwd().getView().getGlobe() == null)
+		// return;
+		//
+		// long now = System.currentTimeMillis();
+		// double d = rotationRate * (now - lastTime) * 1.0e-3;
+		// lastTime = now;
+		//
+		// double longitude = eyePosition.getLongitude().degrees;
+		// longitude += d;
+		// if (longitude > 180)
+		// longitude = -180 + (180 - longitude);
+		//
+		// eyePosition = Position.fromDegrees(
+		// eyePosition.getLatitude().degrees, longitude,
+		// eyePosition.getAltitude());
+		// Position groundPos = new Position(
+		// eyePosition.getLatitude(),
+		// eyePosition.getLongitude(), 0);
+		// getWwd().getView().setOrientation(eyePosition, groundPos);
+		// }
+		// }
 
 		protected void enableHelpAnnotation() {
 			if (this.helpLayer != null)
@@ -189,6 +207,8 @@ public class Demo extends ApplicationTemplate {
 			this.helpLayer.removeAllRenderables();
 			this.helpLayer = null;
 		}
+
+
 
 		protected void addObjectsToWorldWindow(Iterable<?> objectsToTrack) {
 			// Set up a layer to render the icons. Disable WWIcon view
@@ -288,20 +308,27 @@ public class Demo extends ApplicationTemplate {
 			this.getLayerPanel().add(box, BorderLayout.SOUTH);
 		}
 	}
+	
+	
 
-	public static Iterable<?> createObjectsToTrack(Double a, Double b) {
+	
+	
+	
+	
+	
+
+	public static Iterable<?> createObjectsToTrack(Double a, Double b,
+			ArrayList<gov.nasa.larcfm.Util.Position> intruderPos) {
 		ArrayList<Object> objects = new ArrayList<Object>();
 		Sector sector = Sector.fromDegrees(35, 45, -110, -100);
-
+		ArrayList<gov.nasa.larcfm.Util.Position> pos = intruderPos;
 		LatLon randLocation1; // randLocation
 
 		// Add the ownship.
 		randLocation1 = randomLocation(sector);
 		Angle la = Angle.fromDegreesLatitude(a);
 		Angle lo = Angle.fromDegreesLongitude(b);
-		
-		
-		
+
 		// WWIcon icon = new
 		// UserFacingIcon("gov/nasa/worldwindx/examples/images/compass3.png",
 		// new Position(la,lo, 0));
@@ -311,28 +338,41 @@ public class Demo extends ApplicationTemplate {
 
 		// Add the ghost
 
-		 WWIcon icon1 = new
-		 UserFacingIcon("gov/nasa/worldwindx/examples/images/blank.png",
-		 new Position(la, lo, 0));
-		 icon1.setSize(new Dimension(5, 5));
-		 icon1.setValue(AVKey.FEEDBACK_ENABLED, Boolean.TRUE);
-		 objects.add(icon1);
+		WWIcon icon1 = new UserFacingIcon(
+				"gov/nasa/worldwindx/examples/images/blank.png",
+				new Position(la, lo, 0));
+		icon1.setSize(new Dimension(5, 5));
+		icon1.setValue(AVKey.FEEDBACK_ENABLED, Boolean.TRUE);
+		objects.add(icon1);
 
-//		randLocation1 = randomLocation(sector);
-//		Airspace airspace = new SphereAirspace(randLocation1, 50000d);
-//		airspace.setAltitude(0d);
-//		airspace.setTerrainConforming(true);
-//		airspace.setAttributes(new BasicAirspaceAttributes(Material.GREEN, 1d));
-//		objects.add(airspace);
+		for (int i = 0; i < pos.size(); i++) {
+			WWIcon icon2 = new UserFacingIcon(
+					"gov/nasa/worldwindx/examples/images/antenna.png",
+					new Position(Angle.fromDegreesLatitude(pos.get(i)
+							.lat()), Angle.fromDegreesLongitude(pos.get(
+							i).lon()), 0));
+			icon2.setSize(new Dimension(50, 50));
+			icon2.setValue(AVKey.FEEDBACK_ENABLED, Boolean.TRUE);
+			objects.add(icon2);
+		}
 
-//		randLocation1 = randomLocation(sector);
-//		ShapeAttributes attrs = new BasicShapeAttributes();
-//		attrs.setInteriorMaterial(Material.BLUE);
-//		attrs.setOutlineMaterial(new Material(WWUtil
-//				.makeColorBrighter(Color.BLUE)));
-//		attrs.setInteriorOpacity(0.5);
-//		SurfaceCircle circle = new SurfaceCircle(attrs, randLocation1, 50000d);
-//		objects.add(circle);
+		// randLocation1 = randomLocation(sector);
+		// Airspace airspace = new SphereAirspace(randLocation1, 50000d);
+		// airspace.setAltitude(0d);
+		// airspace.setTerrainConforming(true);
+		// airspace.setAttributes(new BasicAirspaceAttributes(Material.GREEN,
+		// 1d));
+		// objects.add(airspace);
+
+		// randLocation1 = randomLocation(sector);
+		// ShapeAttributes attrs = new BasicShapeAttributes();
+		// attrs.setInteriorMaterial(Material.BLUE);
+		// attrs.setOutlineMaterial(new Material(WWUtil
+		// .makeColorBrighter(Color.BLUE)));
+		// attrs.setInteriorOpacity(0.5);
+		// SurfaceCircle circle = new SurfaceCircle(attrs, randLocation1,
+		// 50000d);
+		// objects.add(circle);
 
 		return objects;
 	}
@@ -435,9 +475,9 @@ public class Demo extends ApplicationTemplate {
 			Position centerPos = this.wwd.getModel().getGlobe()
 					.computePositionFromPoint(lookAtPoints[1]);
 			double zoom = lookAtPoints[0].distanceTo3(lookAtPoints[1]);
-
+			// System.out.println(zoom);
 			this.wwd.getView().stopAnimations();
-			this.wwd.getView().goTo(centerPos, zoom);
+			this.wwd.getView().goTo(centerPos, 700);
 		}
 
 		public void sceneChanged() {
@@ -594,6 +634,8 @@ public class Demo extends ApplicationTemplate {
 	}
 
 	public static void main(String[] args) {
+	
+		
 		ApplicationTemplate.start("Demo", AppFrame.class);
 		MyPVSioWeb myPVSioWeb = new MyPVSioWeb("localhost:8082/");
 		if (myPVSioWeb.connect()) {
