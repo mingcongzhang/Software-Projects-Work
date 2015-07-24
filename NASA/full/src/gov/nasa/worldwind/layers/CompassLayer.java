@@ -6,6 +6,7 @@
 package gov.nasa.worldwind.layers;
 
 import com.jogamp.opengl.util.texture.*;
+
 import gov.nasa.worldwind.View;
 import gov.nasa.worldwind.avlist.AVKey;
 import gov.nasa.worldwind.exception.WWRuntimeException;
@@ -16,8 +17,11 @@ import gov.nasa.worldwind.util.*;
 import gov.nasa.worldwind.view.orbit.OrbitView;
 
 import javax.media.opengl.*;
+
 import java.awt.*;
 import java.io.*;
+import java.lang.Math;
+import java.util.ArrayList;
 
 /**
  * @author tag
@@ -25,6 +29,53 @@ import java.io.*;
  */
 public class CompassLayer extends AbstractLayer
 {
+	
+	public static class Arc {
+		public double start;
+		public double end;
+		public boolean near;
+		
+		public Arc(double start, double end, boolean near) {
+			this.start = start;
+			this.end = end;
+			this.near = near;
+		}
+	}
+	
+	public static double arcRadius = 242;
+	public static double arcSegments = 50;
+	public static float arcLineWidth = 5;
+	public static double arcLineOffsetX = 264;
+	public static double arcLineOffsetY = 262.75;
+	public static ArrayList<Arc> arcs = new ArrayList<Arc>();
+	
+	private void drawArcs(GL2 gl) {
+		for (Arc arc : arcs) {
+		    double start_angle = arc.start;
+		    double end_angle = arc.end;
+		    double theta = start_angle;
+
+		    if (arc.near) { 
+		    	gl.glColor3f(1,0,0);
+		    } else {
+		    	gl.glColor3f(0,1,0);
+		    }
+		    gl.glLineWidth(arcLineWidth);
+		    gl.glBegin(gl.GL_LINE_STRIP);
+		    for (int i = 0; i <= arcSegments; i++) {
+		    	double x = arcRadius * Math.cos(theta);
+		    	double y = arcRadius * Math.sin(theta);
+		    	
+		    	gl.glVertex2d(x+arcLineOffsetX, y+arcLineOffsetY);
+		    	
+		    	theta += (end_angle - start_angle) / arcSegments;
+		    }
+		    gl.glEnd();
+		}
+	}
+	
+
+	
     protected String iconFilePath = "images/compass3.png"; // TODO: make configurable
     protected double compassToViewportScale = 0.8; // TODO: make configurable
     protected double iconScale = 0.7;
@@ -350,6 +401,8 @@ public class CompassLayer extends AbstractLayer
                 gl.glRotated(heading, 0d, 0d, 1d); // get icon rotate
                 gl.glTranslated(-width / 2, -height / 2, 0);
 
+                drawArcs(gl);
+                
                 gl.glEnable(GL.GL_TEXTURE_2D);
                 iconTexture.bind(gl);
 
@@ -359,6 +412,8 @@ public class CompassLayer extends AbstractLayer
                 TextureCoords texCoords = iconTexture.getImageTexCoords();
                 gl.glScaled(width, height, 1d);
                 dc.drawUnitQuad(texCoords);
+                
+               
             }
             else
             {

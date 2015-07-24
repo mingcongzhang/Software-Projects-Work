@@ -1,0 +1,3 @@
+getWwd().getView().goTo(animateTo, 60000);
+
+getWwd().getView().goTo(animateTo, animateTo.getAltitude()); 

@@ -8,19 +8,20 @@ import gov.nasa.larcfm.ACCoRD.KinematicBands;
 import gov.nasa.larcfm.ACCoRD.OwnshipState;
 import gov.nasa.larcfm.ACCoRD.TrafficState;
 import gov.nasa.larcfm.Util.Position;
+import gov.nasa.worldwind.layers.CompassLayer;
 
 public class MingcongProject {
 
 	static Daidalus daa = new Daidalus();
 	double time;
-	KinematicBands bandInfo;
-	ArrayList<Position> intruderPos = new ArrayList<Position>();
-	Position ownPos;
-	
+	ArrayList<KinematicBands> bandInfo = new ArrayList<KinematicBands>();
+	ArrayList<ArrayList<Position>> intruderPos = new ArrayList<ArrayList<Position>>();
+	ArrayList<Position> ownPos = new ArrayList<Position>();
+			
 	public MingcongProject(double time){
 		this.time = time;
 		String config_file = "/Users/mzhang7/Documents/workspace/full/src/default_parameters.txt";
-		String input_file = "/Users/mzhang7/Documents/workspace/full/src/head_on_scenario_0.txt";
+		String input_file = "/Users/mzhang7/Documents/workspace/full/src/multi_converge_scenario_0.txt";
 
 		// Here, have a way to read configuration file and an input file using
 		// the graphical interface
@@ -35,22 +36,16 @@ public class MingcongProject {
 	
 			//System.out.println("** Time: " + walker.currentTime());
 			walker.readState(daa);
-
-			if(Math.abs(walker.currentTime()-this.time)<1.0){
-				KinematicBands bands = daa.getKinematicBands();
-//				for (int i = 0; i < bands.trackLength(); ++i) {
-//					bandInfo.add(bands);
-//					//System.out.println(bands.track(i, "deg") + " "+ bands.trackRegion(i));
-//
-//				}
-				bandInfo = bands;
-				for (int i = 1; i < daa.numberOfAircraft(); ++i) {
-					intruderPos.add(daa.getTraffic(i).getPosition());
-				}
-				this.ownPos = daa.getOwnship().getPosition();
-				break;
-			}
+			bandInfo.add(daa.getKinematicBands());
 			
+			ArrayList<Position> intruders = new ArrayList<Position>();
+			for (int i = 1; i < daa.numberOfAircraft(); ++i) {
+				intruders.add(daa.getTraffic(i).getPosition());
+			}
+			intruderPos.add(intruders);
+			ownPos.add(daa.getOwnship().getPosition());
+	
+		
 			
 			
 			//OwnshipState own = daa.getOwnship();
@@ -87,13 +82,13 @@ public class MingcongProject {
 	public String getBandName(){
 		return band;
 	}*/
-	public KinematicBands getBandInfo(){
+	public ArrayList<KinematicBands> getBandInfo(){
 		return bandInfo;
 	}
-	public ArrayList<Position> getIntruderPos(){
+	public ArrayList<ArrayList<Position>> getIntruderPos(){
 		return intruderPos;
 	}
-	public Position getOwnPosition(){
+	public ArrayList<Position> getOwnPosition(){
 		return ownPos;
 	}
 

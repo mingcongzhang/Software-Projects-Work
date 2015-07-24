@@ -52,9 +52,10 @@ public class Demo extends ApplicationTemplate {
 		protected ViewController viewController;
 		protected ViewController vc;
 		protected RenderableLayer helpLayer;
-		static KinematicBands bandInfo;
-		public static ArrayList<gov.nasa.larcfm.Util.Position> intruderPos;
-		static gov.nasa.larcfm.Util.Position ownPos;
+		static ArrayList<KinematicBands> bandInfo;
+		protected int animPos = 0;
+		public static ArrayList<ArrayList<gov.nasa.larcfm.Util.Position>> intruderPos;
+		static ArrayList<gov.nasa.larcfm.Util.Position> ownPos;
 
 		Animator animator;
 		double rotationRate = 70; // degrees per second
@@ -68,25 +69,51 @@ public class Demo extends ApplicationTemplate {
 			this.intruderPos = mingcong.getIntruderPos();
 			this.ownPos = mingcong.getOwnPosition();
 
-			for (int i = 0; i < bandInfo.trackLength(); ++i) {
-				System.out.println(bandInfo.track(i, "deg") + " "
-						+ bandInfo.trackRegion(i));
-
-			}
 			int x = this.getWidth();
 			int y = this.getHeight();
 			System.out.println(x + " " + y);
-			this.add(new DrawArc());
+			//this.getLayerPanel().update(g);
+						
 			// System.out.println(bandInfo.get(0).track(0, "deg"));
 			// System.out.println(ownPos.lat()+" "+ownPos.lon());
 			// Create an iterable of the objects we want to keep in view.
-			this.objectsToTrack = createObjectsToTrack(ownPos.lat(),
-					ownPos.lon(), intruderPos);
+			// Set up a layer to render the icons. Disable WWIcon view
+			// clipping, since view tracking works best when an
+			// icon's screen rectangle is known even when the icon is outside
+			// the view frustum.
+			IconLayer iconLayer = new IconLayer();
+			iconLayer.setViewClippingEnabled(false);
+			iconLayer.setName("Icons To Track");
+			insertBeforePlacenames(this.getWwd(), iconLayer);
+
+			// Set up a layer to render the markers.
+			RenderableLayer shapesLayer = new RenderableLayer();
+			shapesLayer.setName("Shapes to Track");
+			insertBeforePlacenames(this.getWwd(), shapesLayer);
+
+			this.getLayerPanel().update(this.getWwd());
+
+			// Set up a SelectListener to drag the spheres.
+			this.getWwd().addSelectListener(new SelectListener() {
+				protected BasicDragger dragger = new BasicDragger(getWwd());
+
+				public void selected(SelectEvent event) {
+					// Delegate dragging computations to a dragger.
+					this.dragger.selected(event);
+
+					if (event.getEventAction().equals(SelectEvent.DRAG)) {
+						disableHelpAnnotation();
+						viewController.sceneChanged();
+					}
+				}
+			});
+
+
 			// Set up a view controller to keep the objects in view.
 			this.viewController = new ViewController(this.getWwd());
 			this.viewController.setObjectsToTrack(this.objectsToTrack);
 			// Set up a layer to render the objects we're tracking.
-			this.addObjectsToWorldWindow(this.objectsToTrack);
+			//this.addObjectsToWorldWindow(this.objectsToTrack);
 			// Set up swing components to toggle the view controller's
 			// behavior.
 			// this.initSwingComponents();
@@ -101,6 +128,62 @@ public class Demo extends ApplicationTemplate {
 			});
 			timer.setRepeats(false);
 			timer.start();
+			
+			//create timer to update compass arcs
+			Timer arcTimer = new Timer(1000, new ActionListener() {
+				public void actionPerformed(ActionEvent ae) {
+					if (animPos >= bandInfo.size()) { // don't go out of bounds
+						animPos = bandInfo.size() -1;
+					}
+					System.out.println(animPos);
+					
+					KinematicBands kb = bandInfo.get(animPos);
+					CompassLayer.arcs = new ArrayList<CompassLayer.Arc>();
+					for (int i = 0; i < kb.trackLength(); ++i) {
+						double start = kb.track(i, "deg").low;
+						double end = kb.track(i, "deg").up;
+						boolean near = kb.trackRegion(i).name() == "NEAR";
+						CompassLayer.arcs.add(new CompassLayer.Arc(Math.toRadians(start), Math.toRadians(end), near));
+					}
+					
+					// Add the objects to track to the layers.
+					objectsToTrack = createObjectsToTrack(ownPos.get(animPos).lat(),
+							ownPos.get(animPos).lon(), intruderPos.get(animPos));
+					iconLayer.removeAllIcons();
+					shapesLayer.removeAllRenderables();
+					for (Object o : objectsToTrack) {
+						if (o instanceof WWIcon)
+							iconLayer.addIcon((WWIcon) o);
+						else if (o instanceof Renderable)
+							shapesLayer.addRenderable((Renderable) o);
+					}
+					Angle la = Angle.fromDegreesLatitude(ownPos.get(animPos).lat());
+					Angle lo = Angle.fromDegreesLongitude(ownPos.get(animPos).lon());
+					
+					getWwd().getView().stopAnimations();
+					
+					Position animateTo = new Position(la, lo, ownPos.get(animPos).altitude());
+					System.out.println("\nSecond: " + animPos + "\nPosition:\n\tLat: " + animateTo.getLatitude() + "\n\tLo: " + animateTo.getLongitude() + 
+							"\n\tAlt: " + animateTo.getAltitude());
+					if (animPos == 0) {
+						getWwd().getView().setEyePosition(new Position(animateTo.getLatitude(), animateTo.getLongitude(), 120000));
+					} else {
+						getWwd().getView().goTo(animateTo, animateTo.getAltitude());
+					}
+					getLayerPanel().update(getWwd());
+					animPos++;
+					
+				}
+			});
+			
+			Timer delay = new Timer(1000, new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					arcTimer.start();
+				}
+			});
+			delay.setRepeats(false);
+			delay.start();
+						
 			// this.update(getGraphics());
 
 			// new java.util.Timer().schedule(new java.util.TimerTask() {
@@ -210,46 +293,46 @@ public class Demo extends ApplicationTemplate {
 
 
 
-		protected void addObjectsToWorldWindow(Iterable<?> objectsToTrack) {
-			// Set up a layer to render the icons. Disable WWIcon view
-			// clipping, since view tracking works best when an
-			// icon's screen rectangle is known even when the icon is outside
-			// the view frustum.
-			IconLayer iconLayer = new IconLayer();
-			iconLayer.setViewClippingEnabled(false);
-			iconLayer.setName("Icons To Track");
-			insertBeforePlacenames(this.getWwd(), iconLayer);
-
-			// Set up a layer to render the markers.
-			RenderableLayer shapesLayer = new RenderableLayer();
-			shapesLayer.setName("Shapes to Track");
-			insertBeforePlacenames(this.getWwd(), shapesLayer);
-
-			this.getLayerPanel().update(this.getWwd());
-
-			// Add the objects to track to the layers.
-			for (Object o : objectsToTrack) {
-				if (o instanceof WWIcon)
-					iconLayer.addIcon((WWIcon) o);
-				else if (o instanceof Renderable)
-					shapesLayer.addRenderable((Renderable) o);
-			}
-
-			// Set up a SelectListener to drag the spheres.
-			this.getWwd().addSelectListener(new SelectListener() {
-				protected BasicDragger dragger = new BasicDragger(getWwd());
-
-				public void selected(SelectEvent event) {
-					// Delegate dragging computations to a dragger.
-					this.dragger.selected(event);
-
-					if (event.getEventAction().equals(SelectEvent.DRAG)) {
-						disableHelpAnnotation();
-						viewController.sceneChanged();
-					}
-				}
-			});
-		}
+//		protected void addObjectsToWorldWindow(Iterable<?> objectsToTrack) {
+//			// Set up a layer to render the icons. Disable WWIcon view
+//			// clipping, since view tracking works best when an
+//			// icon's screen rectangle is known even when the icon is outside
+//			// the view frustum.
+//			IconLayer iconLayer = new IconLayer();
+//			iconLayer.setViewClippingEnabled(false);
+//			iconLayer.setName("Icons To Track");
+//			insertBeforePlacenames(this.getWwd(), iconLayer);
+//
+//			// Set up a layer to render the markers.
+//			RenderableLayer shapesLayer = new RenderableLayer();
+//			shapesLayer.setName("Shapes to Track");
+//			insertBeforePlacenames(this.getWwd(), shapesLayer);
+//
+//			this.getLayerPanel().update(this.getWwd());
+//
+//			// Add the objects to track to the layers.
+//			for (Object o : objectsToTrack) {
+//				if (o instanceof WWIcon)
+//					iconLayer.addIcon((WWIcon) o);
+//				else if (o instanceof Renderable)
+//					shapesLayer.addRenderable((Renderable) o);
+//			}
+//
+//			// Set up a SelectListener to drag the spheres.
+//			this.getWwd().addSelectListener(new SelectListener() {
+//				protected BasicDragger dragger = new BasicDragger(getWwd());
+//
+//				public void selected(SelectEvent event) {
+//					// Delegate dragging computations to a dragger.
+//					this.dragger.selected(event);
+//
+//					if (event.getEventAction().equals(SelectEvent.DRAG)) {
+//						disableHelpAnnotation();
+//						viewController.sceneChanged();
+//					}
+//				}
+//			});
+//		}
 
 		protected void initSwingComponents() {
 			// Create a checkbox to enable/disable the view controller.
