@@ -17,7 +17,10 @@ import gov.nasa.worldwind.layers.*;
 import gov.nasa.worldwind.render.*;
 import gov.nasa.worldwind.render.airspaces.*;
 import gov.nasa.worldwind.util.*;
+import gov.nasa.worldwind.view.BasicViewPropertyLimits;
 import gov.nasa.worldwind.view.orbit.OrbitView;
+import gov.nasa.worldwind.view.orbit.OrbitViewInputSupport;
+import gov.nasa.worldwind.view.orbit.OrbitViewInputSupport.OrbitViewState;
 import gov.nasa.worldwindx.examples.util.ExtentVisibilitySupport;
 
 import javax.swing.*;
@@ -60,18 +63,26 @@ public class Demo extends ApplicationTemplate {
 		Animator animator;
 		double rotationRate = 70; // degrees per second
 		long lastTime;
+		Position lastPosition;
 		Position eyePosition = Position.fromDegrees(0, 0, 20000000);
+		
+		public static Timer animationStart;
+		
+		public static void run(int from) {
+			
+			MingcongProject mingcong = new MingcongProject(from);
+			bandInfo = mingcong.getBandInfo();
+			intruderPos = mingcong.getIntruderPos();
+			ownPos = mingcong.getOwnPosition();
+			
+			animationStart.start();
+		}
 
 		public AppFrame() throws InterruptedException {
 
-			MingcongProject mingcong = new MingcongProject(433.0);
-			this.bandInfo = mingcong.getBandInfo();
-			this.intruderPos = mingcong.getIntruderPos();
-			this.ownPos = mingcong.getOwnPosition();
-
 			int x = this.getWidth();
 			int y = this.getHeight();
-			System.out.println(x + " " + y);
+			//System.out.println(x + " " + y);
 			//this.getLayerPanel().update(g);
 						
 			// System.out.println(bandInfo.get(0).track(0, "deg"));
@@ -142,13 +153,21 @@ public class Demo extends ApplicationTemplate {
 					for (int i = 0; i < kb.trackLength(); ++i) {
 						double start = kb.track(i, "deg").low;
 						double end = kb.track(i, "deg").up;
-						boolean near = kb.trackRegion(i).name() == "NEAR";
+						//boolean near = kb.trackRegion(i).name() == "NEAR";
+						int near;
+						if(kb.trackRegion(i).name() == "NEAR"){
+							near = 1;
+						}else if(kb.trackRegion(i).name() == "RECOVERY"){
+							near = 2;
+						}else{
+							near = 0;
+						}
 						CompassLayer.arcs.add(new CompassLayer.Arc(Math.toRadians(start), Math.toRadians(end), near));
 					}
 					
 					// Add the objects to track to the layers.
-					objectsToTrack = createObjectsToTrack(ownPos.get(animPos).lat(),
-							ownPos.get(animPos).lon(), intruderPos.get(animPos));
+					objectsToTrack = createObjectsToTrack(ownPos.get(animPos).latitude(),
+							ownPos.get(animPos).longitude(), intruderPos.get(animPos));
 					iconLayer.removeAllIcons();
 					shapesLayer.removeAllRenderables();
 					for (Object o : objectsToTrack) {
@@ -157,8 +176,8 @@ public class Demo extends ApplicationTemplate {
 						else if (o instanceof Renderable)
 							shapesLayer.addRenderable((Renderable) o);
 					}
-					Angle la = Angle.fromDegreesLatitude(ownPos.get(animPos).lat());
-					Angle lo = Angle.fromDegreesLongitude(ownPos.get(animPos).lon());
+					Angle la = Angle.fromDegreesLatitude(ownPos.get(animPos).latitude());
+					Angle lo = Angle.fromDegreesLongitude(ownPos.get(animPos).longitude());
 					
 					getWwd().getView().stopAnimations();
 					
@@ -168,21 +187,35 @@ public class Demo extends ApplicationTemplate {
 					if (animPos == 0) {
 						getWwd().getView().setEyePosition(new Position(animateTo.getLatitude(), animateTo.getLongitude(), 120000));
 					} else {
-						getWwd().getView().goTo(animateTo, animateTo.getAltitude());
+						// look at correct location
+					    OrbitView orbitView = (OrbitView) getWwd().getView();
+					    
+					    OrbitViewState viewState = computeViewState(lastPosition, animateTo, getWwd().getModel().getGlobe());
+					    if (viewState != null)
+					    {
+					        Angle heading = BasicViewPropertyLimits.limitHeading(viewState.getHeading(), orbitView.getViewPropertyLimits());
+					        Angle pitch = BasicViewPropertyLimits.limitPitch(viewState.getPitch(), orbitView.getViewPropertyLimits());
+					        orbitView.setHeading(heading);
+//					        orbitView.setPitch(pitch);
+					        
+					    }
+					    
+						getWwd().getView().goTo(animateTo, animateTo.getAltitude()*30); 
+//////////////++++++++++++++++++++++++++++++++++++++++++++++++++						
 					}
+					lastPosition = animateTo;
 					getLayerPanel().update(getWwd());
 					animPos++;
 					
 				}
 			});
 			
-			Timer delay = new Timer(1000, new ActionListener() {
+			animationStart = new Timer(1000, new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					arcTimer.start();
 				}
 			});
-			delay.setRepeats(false);
-			delay.start();
+			animationStart.setRepeats(false);
 						
 			// this.update(getGraphics());
 
@@ -273,6 +306,14 @@ public class Demo extends ApplicationTemplate {
 		// }
 		// }
 
+		OrbitViewState computeViewState(Position eye, Position center, Globe globe)
+		{
+		    Vec4 eyePoint = globe.computePointFromPosition(eye);
+		    Vec4 centerPoint = globe.computePointFromPosition(center);
+		    Vec4 normal = globe.computeSurfaceNormalAtLocation(center.getLatitude(), center.getLongitude());
+		    return OrbitViewInputSupport.computeOrbitViewState(globe, eyePoint, centerPoint, normal);
+		}
+		
 		protected void enableHelpAnnotation() {
 			if (this.helpLayer != null)
 				return;
@@ -430,11 +471,11 @@ public class Demo extends ApplicationTemplate {
 
 		for (int i = 0; i < pos.size(); i++) {
 			WWIcon icon2 = new UserFacingIcon(
-					"gov/nasa/worldwindx/examples/images/antenna.png",
+					"gov/nasa/worldwindx/examples/images/ownship.png",
 					new Position(Angle.fromDegreesLatitude(pos.get(i)
-							.lat()), Angle.fromDegreesLongitude(pos.get(
-							i).lon()), 0));
-			icon2.setSize(new Dimension(50, 50));
+							.latitude()), Angle.fromDegreesLongitude(pos.get(
+							i).longitude()), 0));
+			icon2.setSize(new Dimension(35, 35));
 			icon2.setValue(AVKey.FEEDBACK_ENABLED, Boolean.TRUE);
 			objects.add(icon2);
 		}

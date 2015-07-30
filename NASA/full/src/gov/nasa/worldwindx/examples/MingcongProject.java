@@ -17,15 +17,17 @@ public class MingcongProject {
 	ArrayList<KinematicBands> bandInfo = new ArrayList<KinematicBands>();
 	ArrayList<ArrayList<Position>> intruderPos = new ArrayList<ArrayList<Position>>();
 	ArrayList<Position> ownPos = new ArrayList<Position>();
+	public static String config_file, input_file;
+	
 			
 	public MingcongProject(double time){
 		this.time = time;
-		String config_file = "/Users/mzhang7/Documents/workspace/full/src/default_parameters.txt";
-		String input_file = "/Users/mzhang7/Documents/workspace/full/src/multi_converge_scenario_0.txt";
+		config_file = "/Users/mzhang7/Documents/workspace/full/src/default_parameters.txt";
+//		String input_file = "/Users/mzhang7/Documents/workspace/full/src/multi_converge_scenario_0.txt";
+		input_file = "/Users/mzhang7/Documents/workspace/full/src/test.txt";
 
 		// Here, have a way to read configuration file and an input file using
 		// the graphical interface
-
 		daa.loadParametersFromFile(config_file);
 		daa.setAlertingTime(60);
 		daa.setTimeDelay(5);
@@ -33,34 +35,34 @@ public class MingcongProject {
 		DaidalusWalker walker = new DaidalusWalker(input_file);
 
 		while (!walker.atEnd()) {
-	
-			//System.out.println("** Time: " + walker.currentTime());
-			walker.readState(daa);
-			bandInfo.add(daa.getKinematicBands());
-			
-			ArrayList<Position> intruders = new ArrayList<Position>();
-			for (int i = 1; i < daa.numberOfAircraft(); ++i) {
-				intruders.add(daa.getTraffic(i).getPosition());
+			//System.out.println(walker.currentTime()+"____________");
+
+			if (walker.currentTime() >= time) {
+
+				walker.readState(daa);
+				bandInfo.add(daa.getKinematicBands());
+				
+				ArrayList<Position> intruders = new ArrayList<Position>();
+				for (int i = 1; i < daa.numberOfAircraft(); ++i) {
+					intruders.add(daa.getTraffic(i).getPosition());
+				}
+				intruderPos.add(intruders);
+				ownPos.add(daa.getOwnship().getPosition());			
 			}
-			intruderPos.add(intruders);
-			ownPos.add(daa.getOwnship().getPosition());
-	
-		
-			
-			
+			else{walker.goNext();}
 			//OwnshipState own = daa.getOwnship();
 			
 
 			// Draw aircraft
-			/*
-			KinematicBands bands = daa.getKinematicBands();
+			
+/*			KinematicBands bands = daa.getKinematicBands();
 
 			for (int i = 0; i < bands.trackLength(); ++i) {
 				System.out.println(bands.track(i, "deg") + " "
 						+ bands.trackRegion(i));
 
-			}
-*/
+			}*/
+
 			// Draw bands
 
 		}

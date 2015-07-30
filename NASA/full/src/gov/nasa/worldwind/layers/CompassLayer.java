@@ -33,9 +33,10 @@ public class CompassLayer extends AbstractLayer
 	public static class Arc {
 		public double start;
 		public double end;
-		public boolean near;
+		public int near;
+		public boolean recovery;
 		
-		public Arc(double start, double end, boolean near) {
+		public Arc(double start, double end, int near) {
 			this.start = start;
 			this.end = end;
 			this.near = near;
@@ -44,7 +45,7 @@ public class CompassLayer extends AbstractLayer
 	
 	public static double arcRadius = 242;
 	public static double arcSegments = 50;
-	public static float arcLineWidth = 5;
+	public static float arcLineWidth = 8;
 	public static double arcLineOffsetX = 264;
 	public static double arcLineOffsetY = 262.75;
 	public static ArrayList<Arc> arcs = new ArrayList<Arc>();
@@ -55,10 +56,15 @@ public class CompassLayer extends AbstractLayer
 		    double end_angle = arc.end;
 		    double theta = start_angle;
 
-		    if (arc.near) { 
+		    if (arc.near==1) { 
 		    	gl.glColor3f(1,0,0);
-		    } else {
-		    	gl.glColor3f(0,1,0);
+		    //	System.out.println("NEAR--------------");
+		    }else if(arc.near==2){ 
+			    gl.glColor3f(0,1,0);
+			    	System.out.println("RECOVERY++++++++++++++");
+
+		    }else {
+		    	gl.glColor3f(1,1,1);
 		    }
 		    gl.glLineWidth(arcLineWidth);
 		    gl.glBegin(gl.GL_LINE_STRIP);
