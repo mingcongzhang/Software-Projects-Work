@@ -760,7 +760,7 @@ public class Demo extends ApplicationTemplate {
 	public static void main(String[] args) {
 	
 		
-		ApplicationTemplate.start("Demo", AppFrame.class);
+		ApplicationTemplate.start("Demo of Air Traffic Conflict Prevention Bands Algorithms", AppFrame.class);
 		MyPVSioWeb myPVSioWeb = new MyPVSioWeb("localhost:8082/");
 		if (myPVSioWeb.connect()) {
 			// myPVSioWeb.startPVSioDemo("TCAS/pvs", "top");

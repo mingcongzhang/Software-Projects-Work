@@ -22,9 +22,9 @@ public class MingcongProject {
 			
 	public MingcongProject(double time){
 		this.time = time;
-		config_file = "/Users/mzhang7/Documents/workspace/full/src/default_parameters.txt";
+//		config_file = "/Users/mzhang7/Documents/workspace/full/src/default_parameters.txt";
 //		String input_file = "/Users/mzhang7/Documents/workspace/full/src/multi_converge_scenario_0.txt";
-		input_file = "/Users/mzhang7/Documents/workspace/full/src/test.txt";
+//		input_file = "/Users/mzhang7/Documents/workspace/full/src/test.txt";
 
 		// Here, have a way to read configuration file and an input file using
 		// the graphical interface
