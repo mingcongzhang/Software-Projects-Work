@@ -6,6 +6,7 @@
 package gov.nasa.worldwind.render;
 
 import com.jogamp.opengl.util.texture.TextureCoords;
+
 import gov.nasa.worldwind.Locatable;
 import gov.nasa.worldwind.avlist.AVKey;
 import gov.nasa.worldwind.exception.WWRuntimeException;
@@ -14,8 +15,10 @@ import gov.nasa.worldwind.layers.Layer;
 import gov.nasa.worldwind.pick.PickSupport;
 import gov.nasa.worldwind.terrain.SectorGeometryList;
 import gov.nasa.worldwind.util.*;
+import gov.nasa.worldwindx.examples.Rotable;
 
 import javax.media.opengl.*;
+
 import java.awt.*;
 import java.util.Iterator;
 import java.util.logging.Level;
@@ -665,7 +668,7 @@ public class IconRenderer
         double width = size != null ? size.getWidth() : icon.getImageTexture().getWidth(dc);
         double height = size != null ? size.getHeight() : icon.getImageTexture().getHeight(dc);
         gl.glTranslated(screenPoint.x - width / 2, screenPoint.y + (pedestalScale * height) + pedestalSpacing, 0d);
-
+        
         if (icon.isHighlighted())
         {
             double heightDelta = this.pedestal != null ? 0 : height / 2; // expand only above the pedestal
@@ -703,6 +706,16 @@ public class IconRenderer
         {
             TextureCoords texCoords = icon.getImageTexture().getTexCoords();
             gl.glScaled(width, height, 1d);
+            
+            //gl.glTranslated(screenPoint.x, screenPoint.y + height / 2, 0d);
+            if (icon instanceof Rotable)
+            {
+    	        Angle heading = ((Rotable) icon).getHeading();
+    	        gl.glRotated(heading.getDegrees(), 0d, 0d, 1d);
+    	        //gl.glRotated(5d, 0d, 0d, 1d);
+            }
+            //gl.glTranslated(-width / 2, -height / 2, 0d);
+            
             dc.drawUnitQuad(texCoords);
         }
 
@@ -721,7 +734,7 @@ public class IconRenderer
 
         // Record feedback data for this WWIcon if feedback is enabled.
         this.recordFeedback(dc, icon, uIcon.point, rect);
-
+        
         return screenPoint;
     }
 

@@ -433,16 +433,14 @@ public class Demo extends ApplicationTemplate {
 		}
 	}
 	
-	
-
-	
-	
-	
-	
-	
+	static ArrayList<gov.nasa.larcfm.Util.Position> lastIntruderPos;
 
 	public static Iterable<?> createObjectsToTrack(Double a, Double b,
 			ArrayList<gov.nasa.larcfm.Util.Position> intruderPos) {
+		if (lastIntruderPos == null || lastIntruderPos.size() != intruderPos.size()) {
+			lastIntruderPos = intruderPos;
+		}
+		
 		ArrayList<Object> objects = new ArrayList<Object>();
 		Sector sector = Sector.fromDegrees(35, 45, -110, -100);
 		ArrayList<gov.nasa.larcfm.Util.Position> pos = intruderPos;
@@ -470,13 +468,16 @@ public class Demo extends ApplicationTemplate {
 		objects.add(icon1);
 
 		for (int i = 0; i < pos.size(); i++) {
-			WWIcon icon2 = new UserFacingIcon(
+			Rotable icon2 = new Rotable(
 					"gov/nasa/worldwindx/examples/images/ownship.png",
 					new Position(Angle.fromDegreesLatitude(pos.get(i)
 							.latitude()), Angle.fromDegreesLongitude(pos.get(
 							i).longitude()), 0));
 			icon2.setSize(new Dimension(35, 35));
 			icon2.setValue(AVKey.FEEDBACK_ENABLED, Boolean.TRUE);
+			LatLon p1 = new LatLon(Angle.fromDegreesLatitude(lastIntruderPos.get(i).latitude()), Angle.fromDegreesLongitude(lastIntruderPos.get(i).longitude()));
+	        LatLon p2 = new LatLon(Angle.fromDegreesLatitude(intruderPos.get(i).latitude()), Angle.fromDegreesLongitude(intruderPos.get(i).longitude()));
+            icon2.heading = LatLon.greatCircleAzimuth(p2, p1);
 			objects.add(icon2);
 		}
 
@@ -498,9 +499,10 @@ public class Demo extends ApplicationTemplate {
 		// 50000d);
 		// objects.add(circle);
 
+		lastIntruderPos = intruderPos;
 		return objects;
 	}
-
+	
 	protected static LatLon randomLocation(Sector sector) {
 		return new LatLon(Angle.mix(Math.random(), sector.getMinLatitude(),
 				sector.getMaxLatitude()), Angle.mix(Math.random(),
