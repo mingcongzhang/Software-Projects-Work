@@ -50,31 +50,44 @@ import java.util.*;
  * @version $Id: KeepingObjectsInView.java 1171 2013-02-11 21:45:02Z dcollins $
  */
 public class Demo extends ApplicationTemplate {
+	public static RenderableLayer rl = new RenderableLayer();
+
 	public static class AppFrame extends ApplicationTemplate.AppFrame {
 		protected Iterable<?> objectsToTrack;
 		protected ViewController viewController;
 		protected ViewController vc;
 		protected RenderableLayer helpLayer;
 		static ArrayList<KinematicBands> bandInfo;
-		protected int animPos = 0;
-		public static ArrayList<ArrayList<gov.nasa.larcfm.Util.Position>> intruderPos;
-		static ArrayList<gov.nasa.larcfm.Util.Position> ownPos;
+		public static int animPos = 0;
+		public static ArrayList<ArrayList<gov.nasa.larcfm.ACCoRD.TrafficState>> trafficArray;
+		static ArrayList<gov.nasa.larcfm.ACCoRD.OwnshipState> ownArray;
 
 		Animator animator;
 		double rotationRate = 70; // degrees per second
 		long lastTime;
 		Position lastPosition;
 		Position eyePosition = Position.fromDegrees(0, 0, 20000000);
-		
+
 		public static Timer animationStart;
-		
+		public static JLabel jl = new JLabel();
+		public static int fr;
+
 		public static void run(int from) {
-			
+			fr = from;
+			animPos = 0;
+			if (jl.getParent() != ApplicationTemplate.menubar) {
+				
+				ApplicationTemplate.menubar.add(jl);
+			}else{
+				ApplicationTemplate.menubar.remove(jl);
+				ApplicationTemplate.menubar.setVisible(false);
+				ApplicationTemplate.menubar.setVisible(true);
+			}
 			MingcongProject mingcong = new MingcongProject(from);
 			bandInfo = mingcong.getBandInfo();
-			intruderPos = mingcong.getIntruderPos();
-			ownPos = mingcong.getOwnPosition();
-			
+			trafficArray = mingcong.getTrafficArray();
+			ownArray = mingcong.getOwnArray();
+
 			animationStart.start();
 		}
 
@@ -82,9 +95,9 @@ public class Demo extends ApplicationTemplate {
 
 			int x = this.getWidth();
 			int y = this.getHeight();
-			//System.out.println(x + " " + y);
-			//this.getLayerPanel().update(g);
-						
+			// System.out.println(x + " " + y);
+			// this.getLayerPanel().update(g);
+
 			// System.out.println(bandInfo.get(0).track(0, "deg"));
 			// System.out.println(ownPos.lat()+" "+ownPos.lon());
 			// Create an iterable of the objects we want to keep in view.
@@ -119,12 +132,11 @@ public class Demo extends ApplicationTemplate {
 				}
 			});
 
-
 			// Set up a view controller to keep the objects in view.
 			this.viewController = new ViewController(this.getWwd());
 			this.viewController.setObjectsToTrack(this.objectsToTrack);
 			// Set up a layer to render the objects we're tracking.
-			//this.addObjectsToWorldWindow(this.objectsToTrack);
+			// this.addObjectsToWorldWindow(this.objectsToTrack);
 			// Set up swing components to toggle the view controller's
 			// behavior.
 			// this.initSwingComponents();
@@ -139,35 +151,40 @@ public class Demo extends ApplicationTemplate {
 			});
 			timer.setRepeats(false);
 			timer.start();
-			
-			//create timer to update compass arcs
+
+			// create timer to update compass arcs
 			Timer arcTimer = new Timer(1000, new ActionListener() {
 				public void actionPerformed(ActionEvent ae) {
-					if (animPos >= bandInfo.size()) { // don't go out of bounds
-						animPos = bandInfo.size() -1;
+					if (animPos >= bandInfo.size()) { // don't go out of
+												// bounds
+						animPos = bandInfo.size() - 1;
 					}
 					System.out.println(animPos);
-					
+
 					KinematicBands kb = bandInfo.get(animPos);
 					CompassLayer.arcs = new ArrayList<CompassLayer.Arc>();
 					for (int i = 0; i < kb.trackLength(); ++i) {
 						double start = kb.track(i, "deg").low;
 						double end = kb.track(i, "deg").up;
-						//boolean near = kb.trackRegion(i).name() == "NEAR";
+						// boolean near = kb.trackRegion(i).name() ==
+						// "NEAR";
 						int near;
-						if(kb.trackRegion(i).name() == "NEAR"){
+						if (kb.trackRegion(i).name() == "NEAR") {
 							near = 1;
-						}else if(kb.trackRegion(i).name() == "RECOVERY"){
+						} else if (kb.trackRegion(i).name() == "RECOVERY") {
 							near = 2;
-						}else{
+						} else {
 							near = 0;
 						}
-						CompassLayer.arcs.add(new CompassLayer.Arc(Math.toRadians(start), Math.toRadians(end), near));
+						CompassLayer.arcs.add(new CompassLayer.Arc(Math
+								.toRadians(start), Math.toRadians(end),
+								near));
 					}
-					
+
 					// Add the objects to track to the layers.
-					objectsToTrack = createObjectsToTrack(ownPos.get(animPos).latitude(),
-							ownPos.get(animPos).longitude(), intruderPos.get(animPos));
+					objectsToTrack = createObjectsToTrack(
+							ownArray.get(animPos),
+							trafficArray.get(animPos));
 					iconLayer.removeAllIcons();
 					shapesLayer.removeAllRenderables();
 					for (Object o : objectsToTrack) {
@@ -176,47 +193,69 @@ public class Demo extends ApplicationTemplate {
 						else if (o instanceof Renderable)
 							shapesLayer.addRenderable((Renderable) o);
 					}
-					Angle la = Angle.fromDegreesLatitude(ownPos.get(animPos).latitude());
-					Angle lo = Angle.fromDegreesLongitude(ownPos.get(animPos).longitude());
-					
+					Angle la = Angle.fromDegreesLatitude(ownArray
+							.get(animPos).getPosition().latitude());
+					Angle lo = Angle.fromDegreesLongitude(ownArray
+							.get(animPos).getPosition().longitude());
+
 					getWwd().getView().stopAnimations();
-					
-					Position animateTo = new Position(la, lo, ownPos.get(animPos).altitude());
-					System.out.println("\nSecond: " + animPos + "\nPosition:\n\tLat: " + animateTo.getLatitude() + "\n\tLo: " + animateTo.getLongitude() + 
-							"\n\tAlt: " + animateTo.getAltitude());
+
+					Position animateTo = new Position(la, lo, ownArray
+							.get(animPos).getPosition().altitude());
+					System.out.println("\nSecond: " + animPos
+							+ "\nPosition:\n\tLat: "
+							+ animateTo.getLatitude() + "\n\tLo: "
+							+ animateTo.getLongitude() + "\n\tAlt: "
+							+ animateTo.getAltitude());
+
+					ApplicationTemplate.menubar.remove(jl);
+					// ApplicationTemplate.menubar.remove(3);
+					int temp = animPos + fr;
+					jl = new JLabel("Time: " + temp + "  Latitude: " + animateTo.getLatitude() + "  Longitude: " + animateTo.getLongitude() + "  Altitude: " + animateTo.getAltitude());
+					ApplicationTemplate.menubar.add(jl);
 					if (animPos == 0) {
-						getWwd().getView().setEyePosition(new Position(animateTo.getLatitude(), animateTo.getLongitude(), 120000));
+						getWwd().getView().setEyePosition(
+								new Position(animateTo.getLatitude(),
+										animateTo.getLongitude(),
+										120000));
 					} else {
 						// look at correct location
-					    OrbitView orbitView = (OrbitView) getWwd().getView();
-					    
-					    OrbitViewState viewState = computeViewState(lastPosition, animateTo, getWwd().getModel().getGlobe());
-					    if (viewState != null)
-					    {
-					        Angle heading = BasicViewPropertyLimits.limitHeading(viewState.getHeading(), orbitView.getViewPropertyLimits());
-					        Angle pitch = BasicViewPropertyLimits.limitPitch(viewState.getPitch(), orbitView.getViewPropertyLimits());
-					        orbitView.setHeading(heading);
-//					        orbitView.setPitch(pitch);
-					        
-					    }
-					    
-						getWwd().getView().goTo(animateTo, animateTo.getAltitude()*30); 
-//////////////++++++++++++++++++++++++++++++++++++++++++++++++++						
+						OrbitView orbitView = (OrbitView) getWwd()
+								.getView();
+
+						OrbitViewState viewState = computeViewState(
+								lastPosition, animateTo, getWwd()
+										.getModel().getGlobe());
+						if (viewState != null) {
+							Angle heading = BasicViewPropertyLimits.limitHeading(
+									viewState.getHeading(),
+									orbitView.getViewPropertyLimits());
+							Angle pitch = BasicViewPropertyLimits.limitPitch(
+									viewState.getPitch(),
+									orbitView.getViewPropertyLimits());
+							orbitView.setHeading(heading);
+							// orbitView.setPitch(pitch);
+
+						}
+
+						getWwd().getView().goTo(animateTo,
+								animateTo.getAltitude() * 30);
+						// ////////////++++++++++++++++++++++++++++++++++++++++++++++++++
 					}
 					lastPosition = animateTo;
 					getLayerPanel().update(getWwd());
 					animPos++;
-					
+
 				}
 			});
-			
+
 			animationStart = new Timer(1000, new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					arcTimer.start();
 				}
 			});
 			animationStart.setRepeats(false);
-						
+
 			// this.update(getGraphics());
 
 			// new java.util.Timer().schedule(new java.util.TimerTask() {
@@ -306,14 +345,16 @@ public class Demo extends ApplicationTemplate {
 		// }
 		// }
 
-		OrbitViewState computeViewState(Position eye, Position center, Globe globe)
-		{
-		    Vec4 eyePoint = globe.computePointFromPosition(eye);
-		    Vec4 centerPoint = globe.computePointFromPosition(center);
-		    Vec4 normal = globe.computeSurfaceNormalAtLocation(center.getLatitude(), center.getLongitude());
-		    return OrbitViewInputSupport.computeOrbitViewState(globe, eyePoint, centerPoint, normal);
+		OrbitViewState computeViewState(Position eye, Position center,
+				Globe globe) {
+			Vec4 eyePoint = globe.computePointFromPosition(eye);
+			Vec4 centerPoint = globe.computePointFromPosition(center);
+			Vec4 normal = globe.computeSurfaceNormalAtLocation(
+					center.getLatitude(), center.getLongitude());
+			return OrbitViewInputSupport.computeOrbitViewState(globe,
+					eyePoint, centerPoint, normal);
 		}
-		
+
 		protected void enableHelpAnnotation() {
 			if (this.helpLayer != null)
 				return;
@@ -332,48 +373,47 @@ public class Demo extends ApplicationTemplate {
 			this.helpLayer = null;
 		}
 
-
-
-//		protected void addObjectsToWorldWindow(Iterable<?> objectsToTrack) {
-//			// Set up a layer to render the icons. Disable WWIcon view
-//			// clipping, since view tracking works best when an
-//			// icon's screen rectangle is known even when the icon is outside
-//			// the view frustum.
-//			IconLayer iconLayer = new IconLayer();
-//			iconLayer.setViewClippingEnabled(false);
-//			iconLayer.setName("Icons To Track");
-//			insertBeforePlacenames(this.getWwd(), iconLayer);
-//
-//			// Set up a layer to render the markers.
-//			RenderableLayer shapesLayer = new RenderableLayer();
-//			shapesLayer.setName("Shapes to Track");
-//			insertBeforePlacenames(this.getWwd(), shapesLayer);
-//
-//			this.getLayerPanel().update(this.getWwd());
-//
-//			// Add the objects to track to the layers.
-//			for (Object o : objectsToTrack) {
-//				if (o instanceof WWIcon)
-//					iconLayer.addIcon((WWIcon) o);
-//				else if (o instanceof Renderable)
-//					shapesLayer.addRenderable((Renderable) o);
-//			}
-//
-//			// Set up a SelectListener to drag the spheres.
-//			this.getWwd().addSelectListener(new SelectListener() {
-//				protected BasicDragger dragger = new BasicDragger(getWwd());
-//
-//				public void selected(SelectEvent event) {
-//					// Delegate dragging computations to a dragger.
-//					this.dragger.selected(event);
-//
-//					if (event.getEventAction().equals(SelectEvent.DRAG)) {
-//						disableHelpAnnotation();
-//						viewController.sceneChanged();
-//					}
-//				}
-//			});
-//		}
+		// protected void addObjectsToWorldWindow(Iterable<?> objectsToTrack)
+		// {
+		// // Set up a layer to render the icons. Disable WWIcon view
+		// // clipping, since view tracking works best when an
+		// // icon's screen rectangle is known even when the icon is outside
+		// // the view frustum.
+		// IconLayer iconLayer = new IconLayer();
+		// iconLayer.setViewClippingEnabled(false);
+		// iconLayer.setName("Icons To Track");
+		// insertBeforePlacenames(this.getWwd(), iconLayer);
+		//
+		// // Set up a layer to render the markers.
+		// RenderableLayer shapesLayer = new RenderableLayer();
+		// shapesLayer.setName("Shapes to Track");
+		// insertBeforePlacenames(this.getWwd(), shapesLayer);
+		//
+		// this.getLayerPanel().update(this.getWwd());
+		//
+		// // Add the objects to track to the layers.
+		// for (Object o : objectsToTrack) {
+		// if (o instanceof WWIcon)
+		// iconLayer.addIcon((WWIcon) o);
+		// else if (o instanceof Renderable)
+		// shapesLayer.addRenderable((Renderable) o);
+		// }
+		//
+		// // Set up a SelectListener to drag the spheres.
+		// this.getWwd().addSelectListener(new SelectListener() {
+		// protected BasicDragger dragger = new BasicDragger(getWwd());
+		//
+		// public void selected(SelectEvent event) {
+		// // Delegate dragging computations to a dragger.
+		// this.dragger.selected(event);
+		//
+		// if (event.getEventAction().equals(SelectEvent.DRAG)) {
+		// disableHelpAnnotation();
+		// viewController.sceneChanged();
+		// }
+		// }
+		// });
+		// }
 
 		protected void initSwingComponents() {
 			// Create a checkbox to enable/disable the view controller.
@@ -392,7 +432,7 @@ public class Demo extends ApplicationTemplate {
 			// JButton button = new JButton("Go to objects");
 			// Reduce the frequency at which terrain is regenerated.
 
-			JButton play = new JButton("Pause");
+			// JButton play = new JButton("Pause");
 			// JButton pause = new JButton("Pause");
 			// button.setAlignmentX(Component.LEFT_ALIGNMENT);
 			// button.addActionListener(new ActionListener()
@@ -403,53 +443,54 @@ public class Demo extends ApplicationTemplate {
 			// }
 			// });
 
-			play.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					if (e.getActionCommand().equals("Pause")) {
-						lastTime = System.currentTimeMillis();
-						animator.stop();
-						play.setText("Play");
-					} else {
-						lastTime = System.currentTimeMillis();
-						animator.start();
-						play.setText("Pause");
-					}
+			// play.addActionListener(new ActionListener() {
+			// public void actionPerformed(ActionEvent e) {
+			// if (e.getActionCommand().equals("Pause")) {
+			// lastTime = System.currentTimeMillis();
+			// animator.stop();
+			// play.setText("Play");
+			// } else {
+			// lastTime = System.currentTimeMillis();
+			// animator.start();
+			// play.setText("Pause");
+			// }
+			//
+			// }
+			// });
 
-				}
-			});
-
-			Box box = Box.createVerticalBox();
-			box.setBorder(BorderFactory.createEmptyBorder(30, 30, 30, 30)); // top,
-																// left,
-																// bottom,
-																// right
-			// box.add(checkBox);
-			box.add(Box.createVerticalStrut(5));
-			// box.add(button);
-			box.add(play);
-			// box.add(pause);
-
-			this.getLayerPanel().add(box, BorderLayout.SOUTH);
+			/*
+			 * Box box = Box.createVerticalBox();
+			 * box.setBorder(BorderFactory.createEmptyBorder(30, 30, 30,
+			 * 30)); // top, // left, // bottom, // right //
+			 * box.add(checkBox); box.add(Box.createVerticalStrut(5)); //
+			 * box.add(button); box.add(play); // box.add(pause);
+			 * 
+			 * this.getLayerPanel().add(box, BorderLayout.SOUTH);
+			 */
 		}
 	}
-	
-	static ArrayList<gov.nasa.larcfm.Util.Position> lastIntruderPos;
 
-	public static Iterable<?> createObjectsToTrack(Double a, Double b,
-			ArrayList<gov.nasa.larcfm.Util.Position> intruderPos) {
-		if (lastIntruderPos == null || lastIntruderPos.size() != intruderPos.size()) {
-			lastIntruderPos = intruderPos;
-		}
-		
+	// static ArrayList<gov.nasa.larcfm.Util.Position> lastIntruderPos;
+
+	public static Iterable<?> createObjectsToTrack(
+			gov.nasa.larcfm.ACCoRD.OwnshipState ownship,
+			ArrayList<gov.nasa.larcfm.ACCoRD.TrafficState> traffic) {
+		// if (lastIntruderPos == null || lastIntruderPos.size() !=
+		// intruderPos.size()) {
+		// lastIntruderPos = intruderPos;
+		// }
+
 		ArrayList<Object> objects = new ArrayList<Object>();
 		Sector sector = Sector.fromDegrees(35, 45, -110, -100);
-		ArrayList<gov.nasa.larcfm.Util.Position> pos = intruderPos;
-		LatLon randLocation1; // randLocation
+		// ArrayList<gov.nasa.larcfm.ACCoRD.TrafficState> pos = intruderPos;
+		// LatLon randLocation1; // randLocation
 
 		// Add the ownship.
-		randLocation1 = randomLocation(sector);
-		Angle la = Angle.fromDegreesLatitude(a);
-		Angle lo = Angle.fromDegreesLongitude(b);
+		// randLocation1 = randomLocation(sector);
+		Angle la = Angle
+				.fromDegreesLatitude(ownship.getPosition().latitude());
+		Angle lo = Angle.fromDegreesLongitude(ownship.getPosition()
+				.longitude());
 
 		// WWIcon icon = new
 		// UserFacingIcon("gov/nasa/worldwindx/examples/images/compass3.png",
@@ -466,19 +507,39 @@ public class Demo extends ApplicationTemplate {
 		icon1.setSize(new Dimension(5, 5));
 		icon1.setValue(AVKey.FEEDBACK_ENABLED, Boolean.TRUE);
 		objects.add(icon1);
-
-		for (int i = 0; i < pos.size(); i++) {
+		rl.removeAllRenderables();
+		for (int i = 0; i < traffic.size(); i++) {
+			gov.nasa.larcfm.ACCoRD.TrafficState ac = traffic.get(i);
+			String id = ac.getId();
+			Position pa = new Position(Angle.fromDegreesLatitude(ac
+					.getPosition().latitude()),
+					Angle.fromDegreesLongitude(ac.getPosition()
+							.longitude()), 0);
 			Rotable icon2 = new Rotable(
-					"gov/nasa/worldwindx/examples/images/ownship.png",
-					new Position(Angle.fromDegreesLatitude(pos.get(i)
-							.latitude()), Angle.fromDegreesLongitude(pos.get(
-							i).longitude()), 0));
+					"gov/nasa/worldwindx/examples/images/ownship.png", pa);
 			icon2.setSize(new Dimension(35, 35));
 			icon2.setValue(AVKey.FEEDBACK_ENABLED, Boolean.TRUE);
-			LatLon p1 = new LatLon(Angle.fromDegreesLatitude(lastIntruderPos.get(i).latitude()), Angle.fromDegreesLongitude(lastIntruderPos.get(i).longitude()));
-	        LatLon p2 = new LatLon(Angle.fromDegreesLatitude(intruderPos.get(i).latitude()), Angle.fromDegreesLongitude(intruderPos.get(i).longitude()));
-            icon2.heading = LatLon.greatCircleAzimuth(p2, p1);
+			// LatLon p1 = new
+			// LatLon(Angle.fromDegreesLatitude(lastIntruderPos.get(i).latitude()),
+			// Angle.fromDegreesLongitude(lastIntruderPos.get(i).longitude()));
+			// LatLon p2 = new
+			// LatLon(Angle.fromDegreesLatitude(intruderPos.get(i).latitude()),
+			// Angle.fromDegreesLongitude(intruderPos.get(i).longitude()));
+			double owangle = Math.atan2(-ownship.getVelocity().x,
+					ownship.getVelocity().y);
+			double trangle = Math.atan2(-ac.getVelocity().x,
+					ac.getVelocity().y)-owangle;
+			icon2.heading = Angle.fromRadians(trangle); // ac.getVelocity().compassAngle());
 			objects.add(icon2);
+
+			rl.setName("Annotations (stand alone)");
+			insertBeforeCompass(AppFrame.getWwd(), rl);
+			GlobeAnnotation ga;
+			ga = new GlobeAnnotation(id + "", pa);
+			ga.setHeightInMeter(5e3);
+
+			rl.addRenderable(ga);
+
 		}
 
 		// randLocation1 = randomLocation(sector);
@@ -499,10 +560,10 @@ public class Demo extends ApplicationTemplate {
 		// 50000d);
 		// objects.add(circle);
 
-		lastIntruderPos = intruderPos;
+		// lastIntruderPos = intruderPos;
 		return objects;
 	}
-	
+
 	protected static LatLon randomLocation(Sector sector) {
 		return new LatLon(Angle.mix(Math.random(), sector.getMinLatitude(),
 				sector.getMaxLatitude()), Angle.mix(Math.random(),
@@ -760,9 +821,10 @@ public class Demo extends ApplicationTemplate {
 	}
 
 	public static void main(String[] args) {
-	
-		
-		ApplicationTemplate.start("Demo of Air Traffic Conflict Prevention Bands Algorithms", AppFrame.class);
+
+		ApplicationTemplate.start(
+				"Demo of Air Traffic Conflict Prevention Bands Algorithms",
+				AppFrame.class);
 		MyPVSioWeb myPVSioWeb = new MyPVSioWeb("localhost:8082/");
 		if (myPVSioWeb.connect()) {
 			// myPVSioWeb.startPVSioDemo("TCAS/pvs", "top");

@@ -34,11 +34,14 @@ import java.awt.event.KeyListener;
  * @version $Id: ApplicationTemplate.java 1171 2013-02-11 21:45:02Z dcollins $
  */
 public class ApplicationTemplate {
+	public static JMenuBar menubar = new JMenuBar();
+	public static JButton jb = new JButton("Run");
 	public static class AppPanel extends JPanel {
 		protected WorldWindow wwd;
 		protected StatusBar statusBar;
 		protected ToolTipController toolTipController;
 		protected HighlightController highlightController;
+		
 
 		public AppPanel(Dimension canvasSize, boolean includeStatusBar) {
 			super(new BorderLayout());
@@ -85,9 +88,9 @@ public class ApplicationTemplate {
 	}
 
 	protected static class AppFrame extends JFrame {
-		private Dimension canvasSize = new Dimension(800, 600);
+		private Dimension canvasSize = new Dimension(1000, 600);
 
-		protected AppPanel wwjPanel;
+		protected static AppPanel wwjPanel;
 		protected LayerPanel layerPanel;
 		protected StatisticsPanel statsPanel;
 
@@ -110,6 +113,7 @@ public class ApplicationTemplate {
 				boolean includeLayerPanel, boolean includeStatsPanel) {
 			// Create the WorldWindow.
 			JMenuBar jm = createMenuBar();
+			
 			this.wwjPanel = this.createAppPanel(this.canvasSize,
 					includeStatusBar);
 			this.wwjPanel.setPreferredSize(canvasSize);
@@ -197,6 +201,13 @@ public class ApplicationTemplate {
 			// Center the application on the screen.
 			WWUtil.alignComponent(null, this, AVKey.CENTER);
 			this.setResizable(true);
+//			jm.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), "clickButton");
+//			jm.getRootPane().getActionMap().put("clickButton", new AbstractAction(){
+//				public void actionPerformed(ActionEvent ae){
+//					jb.doClick();
+//					
+//				}
+//			});
 		}
 
 		public JMenuBar createMenuBar() {
@@ -209,7 +220,7 @@ public class ApplicationTemplate {
 			 * JMenuItem("Reed scenario file", KeyEvent.VK_R);
 			 * menu.add(menuItem); setJMenuBar(menubar);
 			 */
-			JMenuBar menubar = new JMenuBar();
+			//JMenuBar menubar = new JMenuBar();
 			menubar.setBackground(Color.gray);
 			menubar.setLayout(new FlowLayout(FlowLayout.LEFT));
 			ImageIcon icon = new ImageIcon(
@@ -273,8 +284,8 @@ public class ApplicationTemplate {
 			JLabel jl = new JLabel("Start from:");
 			menubar.add(jl);
 
-			JTextField jtf = new JTextField(10);
-			jtf.setPreferredSize(new Dimension(20, 20));
+			JTextField jtf = new JTextField(3);
+			//jtf.setPreferredSize(new Dimension(20, 20));
 			jtf.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent event) {
@@ -283,14 +294,20 @@ public class ApplicationTemplate {
 			});
 			menubar.add(jtf);
 			
-			JButton jb = new JButton("Run");
+			//JButton jb = new JButton("Run");
+			
+			//jb.setMnemonic(KeyEvent.VK_ENTER);
 			jb.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent event) {
+					if(Demo.AppFrame.animationStart.isRunning()){
+						Demo.AppFrame.animationStart.stop();
+					}
 					Demo.AppFrame.run(Integer.parseInt(jtf.getText()));
 				}
 			});
 			menubar.add(jb);
+			
 /*			JLabel jl2 = new JLabel("                                                                                         ");
 			menubar.add(jl2);*/
 
@@ -312,8 +329,8 @@ public class ApplicationTemplate {
 			return wwjPanel;
 		}
 
-		public WorldWindow getWwd() {
-			return this.wwjPanel.getWwd();
+		public static WorldWindow getWwd() {
+			return wwjPanel.getWwd();
 		}
 
 		public StatusBar getStatusBar() {

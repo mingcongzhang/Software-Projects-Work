@@ -15,16 +15,16 @@ public class MingcongProject {
 	static Daidalus daa = new Daidalus();
 	double time;
 	ArrayList<KinematicBands> bandInfo = new ArrayList<KinematicBands>();
-	ArrayList<ArrayList<Position>> intruderPos = new ArrayList<ArrayList<Position>>();
-	ArrayList<Position> ownPos = new ArrayList<Position>();
+	ArrayList<ArrayList<TrafficState>> trafficArray = new ArrayList<ArrayList<TrafficState>>();
+	ArrayList<OwnshipState> ownArray = new ArrayList<OwnshipState>();
 	public static String config_file, input_file;
 	
 			
 	public MingcongProject(double time){
 		this.time = time;
-//		config_file = "/Users/mzhang7/Documents/workspace/full/src/default_parameters.txt";
+		config_file = "/Users/mzhang7/Documents/workspace/full/src/default_parameters.txt";
 //		String input_file = "/Users/mzhang7/Documents/workspace/full/src/multi_converge_scenario_0.txt";
-//		input_file = "/Users/mzhang7/Documents/workspace/full/src/test.txt";
+	input_file = "/Users/mzhang7/Documents/workspace/full/src/test.txt";
 
 		// Here, have a way to read configuration file and an input file using
 		// the graphical interface
@@ -42,12 +42,12 @@ public class MingcongProject {
 				walker.readState(daa);
 				bandInfo.add(daa.getKinematicBands());
 				
-				ArrayList<Position> intruders = new ArrayList<Position>();
+				ArrayList<TrafficState> intruders = new ArrayList<TrafficState>();
 				for (int i = 1; i < daa.numberOfAircraft(); ++i) {
-					intruders.add(daa.getTraffic(i).getPosition());
+					intruders.add(daa.getTraffic(i));
 				}
-				intruderPos.add(intruders);
-				ownPos.add(daa.getOwnship().getPosition());			
+				trafficArray.add(intruders);
+				ownArray.add(daa.getOwnship());			
 			}
 			else{walker.goNext();}
 			//OwnshipState own = daa.getOwnship();
@@ -87,11 +87,11 @@ public class MingcongProject {
 	public ArrayList<KinematicBands> getBandInfo(){
 		return bandInfo;
 	}
-	public ArrayList<ArrayList<Position>> getIntruderPos(){
-		return intruderPos;
+	public ArrayList<ArrayList<TrafficState>> getTrafficArray(){
+		return trafficArray;
 	}
-	public ArrayList<Position> getOwnPosition(){
-		return ownPos;
+	public ArrayList<OwnshipState> getOwnArray(){
+		return ownArray;
 	}
 
 }
